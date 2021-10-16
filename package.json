@@ -2,7 +2,7 @@
   "name": "ajlif.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ajlif.github.io/ajlif.github.io",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -24,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "testbuild": "npx http-server build/"
   },
   "eslintConfig": {
     "extends": [
