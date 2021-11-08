@@ -1,3 +1,8 @@
+$primary-color : #30724B;
+$secondary-color : #e4e4e4;
+$white-color : #ffffff;
+$warning-color :  #fbe34c;
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -25,21 +30,21 @@ html {
 
 .divider {
   padding-right: 10px;
-  border-left: 2px solid #e4e4e4;
+  border-left: 2px solid $secondary-color;
 }
 .divider-right {
-  border-right: 2px solid #e4e4e4;
+  border-right: 2px solid $secondary-color;
 }
 
 .modal-divider {
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid $white-color;
 }
 
 .menu {
-  color: #30724B;
+  color: $primary-color;
 }
 .menu-selected {
-  border-bottom: 2px solid #30724B;
+  border-bottom: 2px solid $primary-color;
 }
 .menu>h1 {
   font-size: 50px;
@@ -55,7 +60,7 @@ html {
 }
 
 .btn-success {
-  background-color: #30724B;
+  background-color: $primary-color;
 }
 
 
@@ -72,21 +77,21 @@ html {
   left: 0%;
   border-style: solid;
   border-width: 400px 0 0 700px;
-  border-color: transparent transparent transparent #20623B;
+  border-color: transparent transparent transparent $primary-color;
   z-index: -1;
 }
 
 .modal-background {
-  background-color: #20623b;
+  background-color: $primary-color;
 }
 .modal-background > * {
-  color:  #ffffff;
+  color:  $white-color;
 }
 .white-content {
-  color:  #ffffff;
+  color:  $white-color;
 }
 .btn-outline-success{
-  border-color: #ffffff;
+  border-color: $white-color;
 }
 .btn{
   height: 35px;
@@ -94,15 +99,15 @@ html {
   justify-content: center;
 }
 .btn-outline-primary{
-  background-color: #ffffff;
-  border-color: #30724B;
-  color: #30724B;
+  background-color: $white-color;
+  border-color: $primary-color;
+  color: $primary-color;
   display: flex;
 }
 .btn-outline-primary:hover{
-  background-color: #30724B;
+  background-color: $primary-color;
   border-color: inherit;
-  color: #ffffff;
+  color: $white-color;
 }
 
 .btn-outline-primary:active:focus{
@@ -113,8 +118,8 @@ html {
 }
 
 .btn-outline-warning{
-  background-color: #fbe34c;
-  color: #30724B;
+  background-color: warning-color;
+  color: $primary-color;
   height: 35px;
   display: flex;
   align-items: center;
@@ -122,7 +127,7 @@ html {
 }
 .btn-outline-warning:hover{
   background-color: #f5ec5a;
-  border-color: #fbe34c;
+  border-color: warning-color;
   color: inherit;
 }
 
@@ -142,7 +147,7 @@ html {
 }
 
 .header-cv {
-    color: #ffffff;
+    color: $white-color;
     border-radius: 0 0 100% 100%;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);

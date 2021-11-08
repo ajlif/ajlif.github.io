@@ -6,7 +6,7 @@ import { Link, NavLink as RRNavLink } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 //import {getInitialData} from '../services/Session.service';
 import Skeleton from '@material-ui/lab/Skeleton';
-import './NavMenu.css';
+import './NavMenu.scss';
 
 /*
 interface IProps {
