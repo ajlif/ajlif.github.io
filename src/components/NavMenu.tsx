@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
-//import credemLogo from '../shared/images/LOGOcredem-banca.png';
-//import credemAssicurazioniLogo from '../shared/images/logoCredemAssicurazioni.png';
 import Avatar from '@material-ui/core/Avatar';
 //import {getInitialData} from '../services/Session.service';
 import Skeleton from '@material-ui/lab/Skeleton';
