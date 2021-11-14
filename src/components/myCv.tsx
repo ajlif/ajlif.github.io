@@ -1,19 +1,23 @@
 import React from "react";
 import Experience from "../shared/components/Experience"
+import lo from "../shared/images/php-hd.jpg"
 
 const MyCv = () => {
   return (
     <div>
-      <div className=" header-cv">
+      <div className="header-cv">
         <h1>container fluid</h1>
         <h1>container fluid</h1>
         <div className="presentation-card">
-          <p>just q text to test if it is centered</p>
-          <h1>kksks</h1>
+          <p>just q text to test if it is centered test yes it may work and i know it will work,
+           just q text to test if it is centered test yes it may work and i know it will work,
+             just q text to test if it is centered test yes it may work and i know it will work
+             just q text to test if it is centered test yes it may work and i know it will work
+          </p>
+          <div className="presentation-picture">
+          <img src="" alt="" />
+          </div>
         </div>
-      </div>
-      <div className="container">
-        <h1>My Cv component</h1>
       </div>
 
       <div className="container-cv">
@@ -37,6 +41,11 @@ const MyCv = () => {
         <p>test skill</p>
         <p>test skill</p>
         <p>test skill</p>
+      </div>
+
+      <div className="footer">
+        <h2>footer</h2>
+        <h2>icons</h2>
       </div>
     </div>
   );
