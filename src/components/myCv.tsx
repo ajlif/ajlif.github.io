@@ -42,6 +42,11 @@ const MyCv = () => {
         <p>test skill</p>
       </div>
 
+      <div className="options">
+        <button>download cv</button>
+        <button>contact me</button>
+      </div>
+
       <div className="footer">
         <h2>footer</h2>
         <h2>icons</h2>
