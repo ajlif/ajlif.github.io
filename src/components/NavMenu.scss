@@ -159,6 +159,10 @@ html {
   text-align: center;
 }
 
+.header-cv > h1 {
+  visibility: hidden;
+}
+
 .experience-card {
   width: 500px;
   height: 250px;
@@ -188,7 +192,8 @@ html {
   box-shadow: $card-shadow;
   color: $black-color;
   padding: 5px;
-  margin-top: 00px;
+  margin-top: 0px;
+  border-top: 2px solid $white-color;
 }
 
 .presentation-picture {
@@ -197,11 +202,21 @@ html {
   height: 50px;
   border-radius: 50%;
   position: absolute;
-  top: 70px;
+  top: 75px;
   left: 0; 
   right: 0;
   margin-left: auto; 
-  margin-right: auto; 
+  margin-right: auto;
+  border-top: 2px solid $white-color; 
+}
+
+.skill {
+  background-color: $sucess-color;
+  display: inline-block;
+  color: $white-color;
+  border-radius: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .options {

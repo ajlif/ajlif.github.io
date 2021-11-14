@@ -1,5 +1,6 @@
 import React from "react";
 import Experience from "../shared/components/Experience"
+import Skill from "../shared/components/Skill";
 
 const MyCv = () => {
   return (
@@ -37,9 +38,15 @@ const MyCv = () => {
         <div className="container-experiences">3</div>
 
         <h2>Skills and endorsements</h2>
-        <p>test skill</p>
-        <p>test skill</p>
-        <p>test skill</p>
+        <div className="skill-container">
+        <Skill/>
+        <Skill/>
+        <Skill/>
+        <Skill/>
+        <Skill/>
+        <Skill/>
+        </div>
+        
       </div>
 
       <div className="options">

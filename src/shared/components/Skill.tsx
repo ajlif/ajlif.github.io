@@ -4,8 +4,8 @@ import React from 'react';
 const Skill = () => {
     
     return (
-        <div className="container">
-            <h1> Skill component</h1>
+        <div className="skill">
+            <p> Skill component</p>
         </div>
     );
 }
