@@ -1,6 +1,5 @@
 import React from "react";
 import Experience from "../shared/components/Experience"
-import lo from "../shared/images/php-hd.jpg"
 
 const MyCv = () => {
   return (
@@ -14,10 +13,10 @@ const MyCv = () => {
              just q text to test if it is centered test yes it may work and i know it will work
              just q text to test if it is centered test yes it may work and i know it will work
           </p>
-          <div className="presentation-picture">
-          <img src="" alt="" />
-          </div>
         </div>
+        <div className="presentation-picture">
+          <p>AAA</p>
+          </div>
       </div>
 
       <div className="container-cv">
