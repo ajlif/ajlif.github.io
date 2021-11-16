@@ -163,13 +163,37 @@ html {
   visibility: hidden;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  flex: 50%;
+  text-align: center;
+}
+
+.flex-item-right {
+  flex: 50%;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+    text-align: center;
+  }
+}
+
 .experience-card {
-  width: 500px;
+  width: 450px;
   height: 250px;
   margin-bottom: 5px;
   border-radius: 7px;
   box-shadow: $card-shadow;
   padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .experience-card:hover,
 .experience-card:active,
@@ -178,6 +202,22 @@ html {
   border-color: #800080;
 }
 
+.education-card {
+  width: 450px;
+  height: 150px;
+  margin-bottom: 5px;
+  border-radius: 7px;
+  box-shadow: $card-shadow;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.education-card:hover,
+.education-card:active,
+.education-card:focus {
+  border-left: 3px solid;
+  border-color: #800080;
+}
 .presentation-card {
   z-index: 2;
   width: 500px;
@@ -253,4 +293,5 @@ html {
   align-items: center;
   justify-content: center;
   color: $white-color;
+  border-top: 5px solid #800080;
 }
