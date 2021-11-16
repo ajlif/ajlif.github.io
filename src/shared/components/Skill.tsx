@@ -5,8 +5,9 @@ const Skill = () => {
     
     return (
         <div className="skill">
-            <p> Skill component</p>
+            <span>typescript</span>
         </div>
+        
     );
 }
 

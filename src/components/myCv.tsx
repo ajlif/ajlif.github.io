@@ -1,6 +1,7 @@
 import React from "react";
 import Experience from "../shared/components/Experience"
 import Skill from "../shared/components/Skill";
+import stackTech from "../shared/images/stackTech.png";
 
 const MyCv = () => {
   return (
@@ -15,9 +16,8 @@ const MyCv = () => {
              just q text to test if it is centered test yes it may work and i know it will work
           </p>
         </div>
-        <div className="presentation-picture">
-          <p>AAA</p>
-          </div>
+          <img className="presentation-picture" src={stackTech} alt="stackTech" />
+        
       </div>
 
       <div className="container-cv">
@@ -50,8 +50,9 @@ const MyCv = () => {
       </div>
 
       <div className="options">
-        <button>download cv</button>
-        <button>contact me</button>
+        <button><i className="bi bi-envelope-plus-fill"></i></button>
+        <button><i className="bi bi-download"></i></button>
+        <button><i className="bi bi-arrow-up-circle-fill"></i></button>
       </div>
 
       <div className="footer">
