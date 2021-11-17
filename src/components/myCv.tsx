@@ -70,8 +70,11 @@ const MyCv = () => {
       </div>
 
       <div className="footer">
-        <h2>footer</h2>
-        <h2>icons</h2>
+        <a href="https://github.com/ajlif"><i className="bi bi-github social-footer"></i></a>
+        <a href="https://www.linkedin.com/in/ala-jlif"><i className="bi bi-linkedin social-footer"></i></a>
+        <a href="https://twitter.com/ala_j"><i className="bi bi-twitter social-footer"></i></a>
+        <a href="https://it-it.facebook.com/partir.P75"><i className="bi bi-facebook social-footer"></i></a>
+
       </div>
     </div>
   );

@@ -290,8 +290,20 @@ html {
 .footer {
   background-color: $black-color;
   display: flex;
-  align-items: center;
   justify-content: center;
   color: $white-color;
   border-top: 5px solid #800080;
+}
+
+.footer > * {
+  margin: 10px;
+}
+.social-footer {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: $white-color;
+}
+
+.social-footer:hover {
+  color: #800080;
 }
