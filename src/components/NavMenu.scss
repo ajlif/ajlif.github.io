@@ -187,8 +187,9 @@ html {
 
 
 .education-card {
+  position: relative;
   width: 450px;
-  height: 150px;
+  height: 120px;
   margin-bottom: 5px;
   border-radius: 7px;
   box-shadow: $card-shadow;
@@ -219,6 +220,7 @@ html {
   padding: 5px;
   margin-top: 0px;
   border-top: 2px solid $white-color;
+  backdrop-filter: blur(10px);
 }
 
 .presentation-picture {
@@ -343,6 +345,10 @@ html {
  text-align: left;
 }
 
-.bi-stack, .bi-person-workspace, .bi-geo-alt-fill {
+.bi-stack,
+.bi-person-workspace,
+.bi-geo-alt-fill, 
+.bi-calendar-range-fill,
+.bi-mortarboard-fill {
   margin-right: 5px;
 }
