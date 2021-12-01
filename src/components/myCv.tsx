@@ -41,8 +41,6 @@ const MyCv = () => {
             <h2>Licenses and certifications</h2>
             <div className="container-experiences">1</div>
             <Certification/>
-            <Certification/>
-            <Certification/>
 
             <h2>Skills and endorsements</h2>
             <div className="skill-container">

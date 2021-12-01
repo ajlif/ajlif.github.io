@@ -200,10 +200,26 @@ html {
 }
 .education-card:hover,
 .education-card:active,
-.education-card:focus {
+.education-card:focus,
+.certification-card:hover,
+.certification-card:active,
+.certification-card:focus{
   border-bottom: 3px solid;
   border-color: #800080;
 }
+
+.certification-card {
+  position: relative;
+  width: 450px;
+  height: 150px;
+  margin-bottom: 5px;
+  border-radius: 7px;
+  box-shadow: $card-shadow;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.1s;
+}
+
 .presentation-card {
   z-index: 2;
   width: 500px;
@@ -357,19 +373,15 @@ html {
 .certification-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
+  align-items: center;
   padding-left: 40px;
-  padding-top: 15px;
+  padding-top: 50px;
 }
 
 .certification-picture {
-  position: absolute;
-  left: -20px;
-  top: 20px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 2px solid $white-color;
-  margin-right: 10px;
+  opacity: 1;
 }
