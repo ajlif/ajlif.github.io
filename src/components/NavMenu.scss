@@ -22,29 +22,35 @@ html {
     font-size: 16px;
   }
 }
-.flex-item-left {
-  flex: 50%;
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
   text-align: center;
+}
+
+.flex-item-left {
+  flex: 40%;
 }
 
 .flex-item-right {
-  flex: 50%;
-  text-align: center;
+  flex: 40%;
 }
 
-@media screen and (min-width: 1001px) {
+@media (min-width: 1001px) {
   .presentation-card {
     width: 60vw;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
   .education-card, .certification-card ,  .presentation-card , .experience-card {
-    width: 60vw;
+    width: 80vw;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .education-card, .certification-card, .presentation-card , .experience-card {
     width: 90vw;
   }
@@ -193,13 +199,6 @@ html {
 .header-cv > h1 {
   visibility: hidden;
 }
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
 
 .education-card {
   position: relative;
