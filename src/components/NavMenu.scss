@@ -1,7 +1,11 @@
-$primary-color : #30724B;
-$secondary-color : #e4e4e4;
-$white-color : #ffffff;
-$warning-color :  #fbe34c;
+$sucess-color: #30724b;
+$secondary-color: #e4e4e4;
+$white-color: #ffffff;
+$warning-color: #fbe34c;
+$black-color: #000000;
+$main-gradient: linear-gradient(to left, #da4453, #800080);
+$card-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
 a.navbar-brand {
   white-space: normal;
@@ -15,12 +19,49 @@ html {
 
 @media (min-width: 768px) {
   html {
-      font-size: 16px;
+    font-size: 16px;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  text-align: center;
+}
+
+.flex-item-left {
+  flex: 45%;
+}
+
+.flex-item-right {
+  flex: 45%;
+}
+
+@media (min-width: 1001px) {
+  .presentation-card {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .education-card, .certification-card ,  .presentation-card , .experience-card {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-card, .certification-card, .presentation-card , .experience-card {
+    width: 90vw;
+  }
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+    text-align: center;
   }
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -41,15 +82,15 @@ html {
 }
 
 .menu {
-  color: $primary-color;
+  color: $main-gradient;
 }
 .menu-selected {
-  border-bottom: 2px solid $primary-color;
+  border-bottom: 5px solid;
+  border-image: $main-gradient 1;
 }
-.menu>h1 {
+.menu > h1 {
   font-size: 50px;
   border-bottom: 5px solid;
- 
 }
 
 .user {
@@ -60,9 +101,8 @@ html {
 }
 
 .btn-success {
-  background-color: $primary-color;
+  background-color: $sucess-color;
 }
-
 
 .modal-backdrop.show {
   background: blur(10px);
@@ -72,73 +112,73 @@ html {
   display: inline-block;
   width: 0;
   height: 0;
-  position:fixed;
+  position: fixed;
   bottom: 0%;
   left: 0%;
   border-style: solid;
   border-width: 400px 0 0 700px;
-  border-color: transparent transparent transparent $primary-color;
+  border-color: transparent transparent transparent $sucess-color;
   z-index: -1;
 }
 
 .modal-background {
-  background-color: $primary-color;
+  background-color: $sucess-color;
 }
 .modal-background > * {
-  color:  $white-color;
+  color: $white-color;
 }
 .white-content {
-  color:  $white-color;
+  color: $white-color;
 }
-.btn-outline-success{
+.btn-outline-success {
   border-color: $white-color;
 }
-.btn{
+.btn {
   height: 35px;
   align-items: center;
   justify-content: center;
 }
-.btn-outline-primary{
+.btn-outline-primary {
   background-color: $white-color;
-  border-color: $primary-color;
-  color: $primary-color;
+  border-color: $sucess-color;
+  color: $sucess-color;
   display: flex;
 }
-.btn-outline-primary:hover{
-  background-color: $primary-color;
+.btn-outline-primary:hover {
+  background-color: $sucess-color;
   border-color: inherit;
   color: $white-color;
 }
 
-.btn-outline-primary:active:focus{
-  box-shadow: #9dccb6 0px 0px 0px 3px;   
+.btn-outline-primary:active:focus {
+  box-shadow: #9dccb6 0px 0px 0px 3px;
 }
-.btn-outline-primary:focus{
+.btn-outline-primary:focus {
   box-shadow: none;
 }
 
-.btn-outline-warning{
+.btn-outline-warning {
   background-color: warning-color;
-  color: $primary-color;
+  color: $sucess-color;
   height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.btn-outline-warning:hover{
+.btn-outline-warning:hover {
   background-color: #f5ec5a;
   border-color: warning-color;
   color: inherit;
 }
 
-.btn-outline-warning:active:focus{
-  box-shadow: #f5ec5a 0px 0px 0px 3px;   
+.btn-outline-warning:active:focus {
+  box-shadow: #f5ec5a 0px 0px 0px 3px;
 }
-.btn-outline-warning:focus{
+.btn-outline-warning:focus {
   box-shadow: none;
 }
 
-.form-control:focus:focus{
+.form-control:focus:focus {
   box-shadow: none;
   border-color: #eaeaea;
 }
@@ -147,8 +187,211 @@ html {
 }
 
 .header-cv {
-    color: $white-color;
-    border-radius: 0 0 100% 100%;
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
-  }
+  color: $white-color;
+  border-radius: 0 0 100% 100%;
+  background: $main-gradient;
+}
+
+.header-cv > * {
+  text-align: center;
+}
+
+.header-cv > h1 {
+  visibility: hidden;
+}
+
+.education-card {
+  position: relative;
+  height: 120px;
+  margin-bottom: 5px;
+  border-radius: 7px;
+  box-shadow: $card-shadow;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.1s;
+}
+.education-card:hover,
+.education-card:active,
+.education-card:focus,
+.certification-card:hover,
+.certification-card:active,
+.certification-card:focus{
+  border-bottom: 3px solid;
+  border-color: #800080;
+}
+
+.certification-card {
+  position: relative;
+  height: 150px;
+  margin-bottom: 5px;
+  border-radius: 7px;
+  box-shadow: $card-shadow;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.1s;
+}
+
+.presentation-card {
+  z-index: 2;
+  height: 150px;
+  position: absolute;
+  top: 100px;
+  left: 0; 
+  right: 0;
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 7px;
+  box-shadow: $card-shadow;
+  color: $black-color;
+  padding: 5px;
+  margin-top: 0px;
+  border-top: 2px solid $white-color;
+  backdrop-filter: blur(10px);
+}
+
+.presentation-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 75px;
+  left: 0; 
+  right: 0;
+  margin-left: auto; 
+  margin-right: auto;
+  border: 2px solid $white-color;
+  z-index: 3; 
+}
+
+
+
+.skill {
+  background-color: $sucess-color;
+  display: inline-block;
+  color: $white-color;
+  border-radius:  50rem;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.skill > span {
+  padding: .35em .65em;
+  line-height: 2;
+  text-align: center;
+}
+
+.options {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  color: $white-color;
+}
+
+.options > button {
+  margin-right: 5px;
+  border-radius: 50%;
+  color: $black-color;
+  background-color: $white-color;
+  border: 1px solid $black-color;
+  width: 50px;
+  height: 50px;
+  transition: 0.1s;
+}
+
+.footer {
+  background-color: $black-color;
+  display: flex;
+  justify-content: center;
+  color: $white-color;
+  border-top: 5px solid #800080;
+}
+
+.footer > * {
+  margin: 10px;
+}
+.social-footer {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: $white-color;
+  transition: 0.4s;
+}
+
+.social-footer:hover {
+  color: #800080;
+}
+
+/* Experiences components */
+
+.experience-card {
+  height: 250px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  box-shadow: $card-shadow;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.1s;
+  position: relative;
+}
+.experience-card:hover,
+.experience-card:active,
+.experience-card:focus {
+  border-bottom: 3px solid;
+  border-color: #800080;
+}
+
+.experience-header {
+  position: absolute;
+  width: inherit;
+  height: 50px;
+  left: -20px;
+  top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.experience-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $white-color;
+  margin-right: 10px;
+}
+
+.experience-description {
+  margin-top : 60px;
+  text-align: justify;
+  padding: 5px;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: column;
+ text-align: left;
+}
+
+.bi-stack,
+.bi-person-workspace,
+.bi-geo-alt-fill, 
+.bi-calendar-range-fill,
+.bi-mortarboard-fill {
+  margin-right: 5px;
+}
+
+
+.certification-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+  padding-top: 50px;
+}
+
+.certification-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $white-color;
+  opacity: 1;
+}
