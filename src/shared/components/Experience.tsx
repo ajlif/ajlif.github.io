@@ -1,30 +1,76 @@
-import React from 'react';
-import stackTech from "../../shared/images/stackTech.png";
+import stackTech from "../../shared/static/stackTech.png";
+import { Project } from "../interfaces/cv.interfaces";
+import Skeleton from "@material-ui/lab/Skeleton";
 
-
-
-const Experience = () => {
-
-    return (
-        <div className="experience-card">
-            <div className="experience-header">
-                <img className="experience-picture" src={stackTech} alt="stackTech" loading="lazy"/>
-                <div className="experience-details">
-                        <h6><i className="bi bi-person-workspace"></i>Junior Software engineer - Alten</h6>
-                        <h6><i className="bi bi-geo-alt-fill"></i>Milan, Italy [Oct 2021 - Now[ 2 months</h6>
-                </div>
+const Experience = (props: any) => {
+  return (
+    <div className="experience-card">
+      {props && props.content ? (
+        <>
+          <div className="experience-header">
+            <img
+              className="experience-picture"
+              src={stackTech}
+              alt="stackTech"
+              loading="lazy"
+            />
+            <div className="experience-details">
+              <h6>
+                <i className="bi bi-person-workspace"></i>
+                {props.content.role}
+              </h6>
+              <h6>
+                <i className="bi bi-geo-alt-fill"></i>
+                {props.content.cityAndCountry} | {props.content.from} -{" "}
+                {props.content.to}{" "}
+              </h6>
             </div>
-            
-            <div className="experience-description">  
-            <hr/>
-            <p><i className="bi bi-stack"></i>IDENTY: implementation of a session management console used for video recognition of new customers.
-               test test test testtest test test test test test test test
-               test test test testtest test test test test test test test
-               test test test testtest test test test test test test test
+          </div>
+
+          <div className="experience-description">
+            {props.content.roleDescription &&
+              props.content.roleDescription.map(function (role: Project) {
+                return (
+                  <>
+                    <hr />
+                    <p>
+                      <i className="bi bi-stack"></i>
+                      {role.name}: {role.description}
+                    </p>
+                  </>
+                );
+              })}
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="experience-header">
+            <Skeleton className="experience-picture" variant="circle" />
+            <div className="experience-details">
+              <h6>
+                <i className="bi bi-person-workspace"></i>
+                <Skeleton variant="text" width="100%" />
+              </h6>
+              <h6>
+                <i className="bi bi-geo-alt-fill"></i>
+                <Skeleton variant="text" width="100%" />
+              </h6>
+            </div>
+          </div>
+
+          <div className="experience-description">
+            <hr />
+            <p>
+              <Skeleton variant="text" width="100%" />
+              <Skeleton variant="text" width="100%" />
+              <Skeleton variant="text" width="100%" />
+              <Skeleton variant="text" width="40%" />
             </p>
-            </div>
-        </div>
-    );
-}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 export default Experience;

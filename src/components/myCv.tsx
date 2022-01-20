@@ -3,34 +3,71 @@ import Experience from "../shared/components/Experience";
 import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
 import Certification from "../shared/components/Certification";
-import stackTech from "../shared/images/stackTech.png";
+import ajlif from "../shared/static/ajlif.jpeg";
+import {getExperiences, getProfileInformations} from "../services/cv.service";
+import Skeleton from '@material-ui/lab/Skeleton';
 
 const MyCv = () => {
+
+
+  const [presentations, setPresentations] = React.useState("");
+  const [experiences, setExperiences] = React.useState([]);
+
+  React.useEffect(() => {
+
+    getProfileInformations().then((response: any) => {
+      setPresentations(response)
+    }).catch((error) => {
+      console.log(error);
+    });
+    
+  }, []);
+
+    
+    getExperiences().then((response: any) => {
+      setExperiences(response)
+    }).catch((error) => {
+      console.log(error);
+    }).finally(() => {
+      //remove loading
+    });
+    
+
   return (
     <div>
       <div className="header-cv">
         <h1>container fluid</h1>
         <h1>container fluid</h1>
         <div className="presentation-card">
-          <p>
-            just q text to test if it is centered test yes it may work and i
-            know it will work, just q text to test if it is centered test yes it
-            may work and i know it will work, just q text to test if it is
-            centered test yes it may work and i know it will work just q text to
-            test if it is centered test yes it may work and i know it will work
-          </p>
+          <h4>
+            {presentations ?
+              presentations
+              :
+              (<>
+                <Skeleton variant="text" />
+                <Skeleton variant="text" />
+                <Skeleton variant="text" width="50%" />
+              </>
+              )}
+          </h4>
         </div>
-        <img className="presentation-picture" src={stackTech} alt="stackTech" />
+        <img className="presentation-picture" src={ajlif} alt="stackTech" />
       </div>
 
       <div className="container-cv">
         <div className="flex-container">
           <div className="flex-item-left">
             <h2>Experience</h2>
-            <Experience />
-            <Experience />
-            <Experience />
-            <Experience />
+            {experiences ?
+            (experiences.map(function(object){
+              return <Experience content={object} />;
+            }))
+            :
+            (<> 
+            <Experience content={undefined}/>
+            <Experience content={undefined}/>
+            </>)
+            }
           </div>
 
           <div className="flex-item-right">

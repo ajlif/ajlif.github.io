@@ -1,5 +1,5 @@
 import React from 'react';
-import stackTech from "../../shared/images/stackTech.png";
+import stackTech from "../../shared/static/stackTech.png";
 
 
 const Education = () => {
