@@ -4,34 +4,49 @@ import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
 import Certification from "../shared/components/Certification";
 import ajlif from "../shared/static/ajlif.jpeg";
-import {getExperiences, getProfileInformations} from "../services/cv.service";
-import Skeleton from '@material-ui/lab/Skeleton';
+import { getExperiences, getProfileInformations } from "../services/cv.service";
+import Skeleton from "@material-ui/lab/Skeleton";
+import alten from "../shared/static/alten.png";
+import bgiTunis from "../shared/static/bgiTunis.jpg";
+import otConsulting from "../shared/static/otConsulting.jpeg";
+import { Experience as ExperienceType } from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () => {
-
-
   const [presentations, setPresentations] = React.useState("");
   const [experiences, setExperiences] = React.useState([]);
 
   React.useEffect(() => {
-
-    getProfileInformations().then((response: any) => {
-      setPresentations(response)
-    }).catch((error) => {
-      console.log(error);
-    });
-    
+    getProfileInformations()
+      .then((response: any) => {
+        setPresentations(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
-    
-    getExperiences().then((response: any) => {
-      setExperiences(response)
-    }).catch((error) => {
+  getExperiences()
+    .then((response: any) => {
+      response.map((experience: ExperienceType) => {
+        switch (true) {
+          case experience?.company?.toLowerCase().includes("alten"):
+            return (experience.companyLogo = alten);
+          case experience?.company?.toLowerCase().includes("bgi"):
+            return (experience.companyLogo = bgiTunis);
+          case experience?.company?.toLowerCase().includes("ot"):
+            return (experience.companyLogo = otConsulting);
+          default:
+            return "";
+        }
+      });
+      setExperiences(response);
+    })
+    .catch((error) => {
       console.log(error);
-    }).finally(() => {
+    })
+    .finally(() => {
       //remove loading
     });
-    
 
   return (
     <div>
@@ -40,15 +55,15 @@ const MyCv = () => {
         <h1>container fluid</h1>
         <div className="presentation-card">
           <h4>
-            {presentations ?
+            {presentations ? (
               presentations
-              :
-              (<>
+            ) : (
+              <>
                 <Skeleton variant="text" />
                 <Skeleton variant="text" />
                 <Skeleton variant="text" width="50%" />
               </>
-              )}
+            )}
           </h4>
         </div>
         <img className="presentation-picture" src={ajlif} alt="stackTech" />
@@ -58,26 +73,26 @@ const MyCv = () => {
         <div className="flex-container">
           <div className="flex-item-left">
             <h2>Experience</h2>
-            {experiences ?
-            (experiences.map(function(object){
-              return <Experience content={object} />;
-            }))
-            :
-            (<> 
-            <Experience content={undefined}/>
-            <Experience content={undefined}/>
-            </>)
-            }
+            {experiences && experiences.length ? (
+              experiences.map(function (object) {
+                return <Experience content={object} />;
+              })
+            ) : (
+              <>
+                <Experience content={undefined} />
+                <Experience content={undefined} />
+              </>
+            )}
           </div>
 
           <div className="flex-item-right">
             <h2>Education</h2>
-            <Education/>
-            <Education/>
+            <Education />
+            <Education />
 
             <h2>Licenses and certifications</h2>
             <div className="container-experiences">1</div>
-            <Certification/>
+            <Certification />
 
             <h2>Skills and endorsements</h2>
             <div className="skill-container">
@@ -105,11 +120,18 @@ const MyCv = () => {
       </div>
 
       <div className="footer">
-        <a href="https://github.com/ajlif"><i className="bi bi-github social-footer"></i></a>
-        <a href="https://www.linkedin.com/in/ala-jlif"><i className="bi bi-linkedin social-footer"></i></a>
-        <a href="https://twitter.com/ala_j"><i className="bi bi-twitter social-footer"></i></a>
-        <a href="https://it-it.facebook.com/partir.P75"><i className="bi bi-facebook social-footer"></i></a>
-
+        <a href="https://github.com/ajlif">
+          <i className="bi bi-github social-footer"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ala-jlif">
+          <i className="bi bi-linkedin social-footer"></i>
+        </a>
+        <a href="https://twitter.com/ala_j">
+          <i className="bi bi-twitter social-footer"></i>
+        </a>
+        <a href="https://it-it.facebook.com/partir.P75">
+          <i className="bi bi-facebook social-footer"></i>
+        </a>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ export interface Experience {
     from: string;
     to: string;
     roleDescription:Project[];
+    companyLogo?: string;
 }
 
 export interface Project {

@@ -5,7 +5,7 @@ $warning-color: #fbe34c;
 $black-color: #000000;
 $main-gradient: linear-gradient(to left, #da4453, #800080);
 $card-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
 a.navbar-brand {
   white-space: normal;
@@ -45,16 +45,23 @@ html {
 }
 
 @media (max-width: 1000px) {
-  .education-card, .certification-card ,  .presentation-card , .experience-card {
+  .education-card,
+  .certification-card,
+  .presentation-card,
+  .experience-card {
     width: 80vw;
   }
 }
 
 @media (max-width: 768px) {
-  .education-card, .certification-card, .presentation-card , .experience-card {
+  .education-card,
+  .certification-card,
+  .presentation-card,
+  .experience-card {
     width: 90vw;
   }
-  .flex-item-right, .flex-item-left {
+  .flex-item-right,
+  .flex-item-left {
     flex: 100%;
     text-align: center;
   }
@@ -216,7 +223,7 @@ html {
 .education-card:focus,
 .certification-card:hover,
 .certification-card:active,
-.certification-card:focus{
+.certification-card:focus {
   border-bottom: 3px solid;
   border-color: #800080;
 }
@@ -237,10 +244,10 @@ html {
   height: 150px;
   position: absolute;
   top: 100px;
-  left: 0; 
+  left: 0;
   right: 0;
-  margin-left: auto; 
-  margin-right: auto; 
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 7px;
   box-shadow: $card-shadow;
   color: $black-color;
@@ -260,26 +267,30 @@ html {
   border-radius: 50%;
   position: absolute;
   top: 75px;
-  left: 0; 
+  left: 0;
   right: 0;
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: auto;
   border: 2px solid $white-color;
-  z-index: 3; 
+  z-index: 3;
+  transition: 0.5s;
 }
 
-
+.presentation-picture:hover {
+  width: 70px;
+  height: 70px;
+}
 
 .skill {
   background-color: $sucess-color;
   display: inline-block;
   color: $white-color;
-  border-radius:  50rem;
+  border-radius: 50rem;
   margin-right: 5px;
   margin-bottom: 5px;
 }
 .skill > span {
-  padding: .35em .65em;
+  padding: 0.35em 0.65em;
   line-height: 2;
   text-align: center;
 }
@@ -327,7 +338,7 @@ html {
 /* Experiences components */
 
 .experience-card {
-  height: 250px;
+  height: fit-content;
   margin-bottom: 10px;
   border-radius: 7px;
   box-shadow: $card-shadow;
@@ -359,12 +370,11 @@ html {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid $white-color;
   margin-right: 10px;
 }
 
 .experience-description {
-  margin-top : 60px;
+  margin-top: 60px;
   text-align: justify;
   padding: 5px;
 }
@@ -372,17 +382,16 @@ html {
 .experience-details {
   display: flex;
   flex-direction: column;
- text-align: left;
+  text-align: left;
 }
 
 .bi-stack,
 .bi-person-workspace,
-.bi-geo-alt-fill, 
+.bi-geo-alt-fill,
 .bi-calendar-range-fill,
 .bi-mortarboard-fill {
   margin-right: 5px;
 }
-
 
 .certification-content {
   display: flex;
@@ -390,6 +399,11 @@ html {
   align-items: center;
   padding-left: 40px;
   padding-top: 50px;
+}
+.skeleton-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .certification-picture {
