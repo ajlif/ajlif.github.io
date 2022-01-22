@@ -74,8 +74,8 @@ const MyCv = () => {
           <div className="flex-item-left">
             <h2>Experience</h2>
             {experiences && experiences.length ? (
-              experiences.map(function (object) {
-                return <Experience content={object} />;
+              experiences.map(function (object: ExperienceType, i:number) {
+                return <div key={i}> <Experience content={object} /> </div>
               })
             ) : (
               <>

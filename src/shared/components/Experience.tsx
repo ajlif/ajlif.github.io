@@ -10,7 +10,7 @@ const Experience = (props: any) => {
                         <img
                             className="experience-picture"
                             src={props.content.companyLogo}
-                            alt="companyLogo"
+                            alt=""
                             loading="lazy"
                         />
                         <div className="experience-details">
@@ -28,15 +28,15 @@ const Experience = (props: any) => {
 
                     <div className="experience-description">
                         {props.content.roleDescription &&
-                            props.content.roleDescription.map(function (role: Project) {
+                            props.content.roleDescription.map(function (role: Project, i: number) {
                                 return (
-                                    <>
-                                        <hr />
-                                        <p>
+                                    <div key={i}> 
+                                        <hr/>
+                                        <span>
                                             <i className="bi bi-stack"><b>{role.name}</b>:</i>
                                             {role.description}
-                                        </p>
-                                    </>
+                                        </span>
+                                    </div>
                                 );
                             })}
                     </div>

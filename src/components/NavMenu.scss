@@ -371,12 +371,14 @@ html {
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  box-shadow: $card-shadow;
 }
 
 .experience-description {
   margin-top: 60px;
   text-align: justify;
   padding: 5px;
+  white-space: pre-line;
 }
 
 .experience-details {

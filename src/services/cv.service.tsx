@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Experience } from "../shared/interfaces/cv.interfaces";
 
-const baseURL = "https://jsonplaceholder.typicode.com/urlnotready";
+const baseURL = "https://jsonplaceholder.typicode.com";
 
 let experienceSiemens: Experience = {
     role: 'Software Engineer',
@@ -42,7 +42,8 @@ let experienceOtConsulting: Experience = {
         },
         {
             name: 'Undergraduate internship',
-            description: `Realization of an automation system with NLP and Robotic Process Automation solutions
+            description: `Realization of an automation system with NLP and Robotic Process Automation solutions.
+            Technology stacks:
             Frontend: Angular, bootstrap, highCharts.js, pdf.js
             Backend: Django rest framework, nginx, Celery, RabbitMQ, jwt
             Machine learning: Google Cloud AutoML
@@ -67,13 +68,28 @@ let experienceBGI: Experience = {
 let experiences: Experience[] = [experienceSiemens, experienceOtConsulting, experienceBGI];
 
 axios.interceptors.response.use(function (response) {
-    return response;
+    if (response) {
+        switch (response.request ? response.request.responseURL : '') {
+            case (`${baseURL}/posts`):
+                return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
+            case (`${baseURL}/comments`):
+                return experiences;
+            case (`${baseURL}'/education`):
+                return "dg";
+            case (`${baseURL}'/certifications`):
+                return "dr";
+            case (`${baseURL}'/skills`):
+                return "dd";
+            default:
+                return "";
+        }
+    }
 }, function (error) {
     if (error && error.response && error.response.status === 404) {
         switch (error.request ? error.request.responseURL : '') {
             case (`${baseURL}/profile`):
                 return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
-            case (`${baseURL}/experiences`):
+            case (`${baseURL}/comments`):
                 return experiences;
             case (`${baseURL}'/education`):
                 return "dg";
@@ -89,11 +105,11 @@ axios.interceptors.response.use(function (response) {
 
 
 export function getProfileInformations(): Promise<any> {
-    return axios.get(`${baseURL}/profile`);
+    return axios.get(`${baseURL}/posts`);
 }
 
 export function getExperiences(): Promise<any> {
-    return axios.get(`${baseURL}/experiences`);
+    return axios.get(`${baseURL}/comments`);
 }
 
 export function getEducationBackground() {
