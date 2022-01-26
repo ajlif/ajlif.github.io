@@ -33,26 +33,28 @@ const MyCv = () => {
     }
   }, []);
 
-  getExperiences()
-    .then((response: any) => {
-      response.map((experience: ExperienceType) => {
-        switch (true) {
-          case experience?.company?.toLowerCase().includes('alten'):
-            return (experience.companyLogo = alten);
-          case experience?.company?.toLowerCase().includes('bgi'):
-            return (experience.companyLogo = bgiTunis);
-          case experience?.company?.toLowerCase().includes('ot'):
-            return (experience.companyLogo = otConsulting);
-          default:
-            return '';
-        }
+  useEffect(() => {
+    getExperiences()
+      .then((response: any) => {
+        response.map((experience: ExperienceType) => {
+          switch (true) {
+            case experience?.company?.toLowerCase().includes('alten'):
+              return (experience.companyLogo = alten);
+            case experience?.company?.toLowerCase().includes('bgi'):
+              return (experience.companyLogo = bgiTunis);
+            case experience?.company?.toLowerCase().includes('ot'):
+              return (experience.companyLogo = otConsulting);
+            default:
+              return '';
+          }
+        });
+        setExperiences(response);
+      }).catch((error) => {
+        console.log(error);
+      }).finally(() => {
+        //remove loading
       });
-      setExperiences(response);
-    }).catch((error) => {
-      console.log(error);
-    }).finally(() => {
-      //remove loading
-    });
+  }, []);
 
     function scrollUp(): void {
       window.scrollTo({
@@ -62,7 +64,7 @@ const MyCv = () => {
       });
     }
 
-    function handleScroll(e: Event): void {
+    function handleScroll(): void {
       setshowScrollUp(window.scrollY > 20);
     }
 
