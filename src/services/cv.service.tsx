@@ -86,33 +86,18 @@ axios.interceptors.response.use(function (response) {
                 return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
             case (`${baseURL}/comments`):
                 return experiences;
-            case (`${baseURL}'/users`):
+            case (`${baseURL}/users`):
                 return education;
-            case (`${baseURL}'/photo`):
+            case (`${baseURL}/photo`):
                 return "dr";
-            case (`${baseURL}'/user`):
+            case (`${baseURL}/user`):
                 return "dd";
             default:
                 return "";
         }
     }
 }, function (error) {
-    if (error) {
-        switch (error.request ? error.request.responseURL : '') {
-            case (`${baseURL}/profile`):
-                return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
-            case (`${baseURL}/comments`):
-                return experiences;
-            case (`${baseURL}'/education`):
-                return "dg";
-            case (`${baseURL}'/certifications`):
-                return "dr";
-            case (`${baseURL}'/skills`):
-                return "dd";
-            default:
-                return error;
-        }
-    }
+    console.log(error);
 });
 
 
@@ -124,7 +109,7 @@ export function getExperiences(): Promise<any> {
     return axios.get(`${baseURL}/comments`);
 }
 
-export function getEducation(): Promise<Education> {
+export function getEducation(): Promise<any> {
     return axios.get(`${baseURL}/users`);
 }
 

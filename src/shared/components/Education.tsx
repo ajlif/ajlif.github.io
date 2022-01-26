@@ -7,7 +7,7 @@ const Education = (props: any) => {
     return (
         <div className="education-card">
             <div className="experience-header">
-                {props.content && props.content.length ? (
+                {props.content ? (
                     <>
                         <img className="experience-picture" src={props.content.uniLogo} alt=" " loading="lazy" />
                         <h6><i className="bi bi-geo-alt-fill"></i>{props.content.university}</h6>
