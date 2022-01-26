@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Experience from "../shared/components/Experience";
 import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
@@ -12,10 +12,11 @@ import otConsulting from "../shared/static/otConsulting.jpeg";
 import { Experience as ExperienceType } from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () => {
-  const [presentations, setPresentations] = React.useState("");
-  const [experiences, setExperiences] = React.useState([]);
+  const [presentations, setPresentations] = useState('');
+  const [experiences, setExperiences] = useState([]);
+  const [showScrollUp, setshowScrollUp] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     getProfileInformations()
       .then((response: any) => {
         setPresentations(response);
@@ -24,29 +25,46 @@ const MyCv = () => {
         console.log(error);
       });
   }, []);
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
   getExperiences()
     .then((response: any) => {
       response.map((experience: ExperienceType) => {
         switch (true) {
-          case experience?.company?.toLowerCase().includes("alten"):
+          case experience?.company?.toLowerCase().includes('alten'):
             return (experience.companyLogo = alten);
-          case experience?.company?.toLowerCase().includes("bgi"):
+          case experience?.company?.toLowerCase().includes('bgi'):
             return (experience.companyLogo = bgiTunis);
-          case experience?.company?.toLowerCase().includes("ot"):
+          case experience?.company?.toLowerCase().includes('ot'):
             return (experience.companyLogo = otConsulting);
           default:
-            return "";
+            return '';
         }
       });
       setExperiences(response);
-    })
-    .catch((error) => {
+    }).catch((error) => {
       console.log(error);
-    })
-    .finally(() => {
+    }).finally(() => {
       //remove loading
     });
+
+    function scrollUp(): void {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function handleScroll(e: Event): void {
+      setshowScrollUp(window.scrollY > 20);
+    }
 
   return (
     <div>
@@ -109,12 +127,12 @@ const MyCv = () => {
 
       <div className="options">
         <button>
-          <i className="bi bi-envelope-plus-fill"></i>
+          <a href="mailto:alajlif@gmail.com"><i className="bi bi-envelope-plus-fill"></i></a>
         </button>
         <button>
           <i className="bi bi-download"></i>
         </button>
-        <button>
+        <button onClick={scrollUp} className={showScrollUp ? '':'hidden'}>
           <i className="bi bi-arrow-up-circle-fill"></i>
         </button>
       </div>
