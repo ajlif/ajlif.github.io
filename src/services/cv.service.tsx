@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Experience } from "../shared/interfaces/cv.interfaces";
+import { Education } from "../shared/interfaces/cv.interfaces";
 
 const baseURL = "https://jsonplaceholder.typicode.com";
 
@@ -14,7 +15,6 @@ let experienceSiemens: Experience = {
         description: 'Working on Cerberus Portal which is a secure and Cloud-based web portal that allows service providers to take the next step in digitalizing their service offering. Save costs and decrease travel times by knowing what is going on with your customer sites remotely. Increase your service efficiency by being able to see everything that is going on in one place.'
     }]
 }
-
 let experienceOtConsulting: Experience = {
     role: 'junior Software Engineer',
     company: 'OT Consulting @ CREDEM bank',
@@ -50,7 +50,6 @@ let experienceOtConsulting: Experience = {
             tools: Visual Studio Code, git , docker`
         }]
 }
-
 let experienceBGI: Experience = {
     role: 'Undergraduate internship',
     company: 'BGI',
@@ -64,8 +63,21 @@ let experienceBGI: Experience = {
         Html5 , CSS3 , J2EE , Spring , JavaServer Faces , Javascript , Hibernate , git.`
     }]
 }
-
 let experiences: Experience[] = [experienceSiemens, experienceOtConsulting, experienceBGI];
+
+let masterDegree : Education = {
+    university: 'University of Modena and Reggio Emilia - Italy',
+    degree : 'Master in Computer Science',
+    startDate: '2017',
+    endDate: '2020'
+}
+let bachelorDegree : Education = {
+    university: 'Faculty of Sciences of Bizerte (FSB) - University of Carthage',
+    degree : 'Bachelor of Computer Science',
+    startDate: '2012',
+    endDate: '2015'
+}
+let education : Education[] = [masterDegree, bachelorDegree];
 
 axios.interceptors.response.use(function (response) {
     if (response) {
@@ -74,18 +86,18 @@ axios.interceptors.response.use(function (response) {
                 return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
             case (`${baseURL}/comments`):
                 return experiences;
-            case (`${baseURL}'/education`):
-                return "dg";
-            case (`${baseURL}'/certifications`):
+            case (`${baseURL}'/users`):
+                return education;
+            case (`${baseURL}'/photo`):
                 return "dr";
-            case (`${baseURL}'/skills`):
+            case (`${baseURL}'/user`):
                 return "dd";
             default:
                 return "";
         }
     }
 }, function (error) {
-    if (error && error.response && error.response.status === 404) {
+    if (error) {
         switch (error.request ? error.request.responseURL : '') {
             case (`${baseURL}/profile`):
                 return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
@@ -112,14 +124,14 @@ export function getExperiences(): Promise<any> {
     return axios.get(`${baseURL}/comments`);
 }
 
-export function getEducationBackground() {
-    axios.get(`${baseURL}'/education`);
+export function getEducation(): Promise<Education> {
+    return axios.get(`${baseURL}/users`);
 }
 
 export function getCertifications() {
-    axios.get(`${baseURL}'/certifications`);
+    axios.get(`${baseURL}/photos`);
 }
 
 export function getSkills() {
-    axios.get(`${baseURL}'/skills`);
+    axios.get(`${baseURL}/user`);
 }

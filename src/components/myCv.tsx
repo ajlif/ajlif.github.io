@@ -4,16 +4,19 @@ import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
 import Certification from "../shared/components/Certification";
 import ajlif from "../shared/static/ajlif.jpeg";
-import { getExperiences, getProfileInformations } from "../services/cv.service";
+import { getExperiences, getProfileInformations, getEducation } from "../services/cv.service";
 import Skeleton from "@material-ui/lab/Skeleton";
 import alten from "../shared/static/alten.png";
 import bgiTunis from "../shared/static/bgiTunis.jpg";
 import otConsulting from "../shared/static/otConsulting.jpeg";
-import { Experience as ExperienceType } from "../shared/interfaces/cv.interfaces";
+import unimore from "../shared/static/unimore.jpg";
+import fsb from "../shared/static/fsb.png";
+import { Education as EducationType, Experience as ExperienceType } from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () => {
   const [presentations, setPresentations] = useState('');
   const [experiences, setExperiences] = useState([]);
+  const [educations, setEducations] = useState([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
 
   useEffect(() => {
@@ -54,6 +57,25 @@ const MyCv = () => {
       }).finally(() => {
         //remove loading
       });
+  }, []);
+
+  useEffect(() => {
+    getEducation()
+      .then((response: any) => {
+        response.map((education: EducationType) => {
+          switch (true) {
+            case education?.university?.toLowerCase().includes('modena'):
+              return (education.uniLogo = unimore);
+            case education?.university?.toLowerCase().includes('bizerte'):
+              return (education.uniLogo = fsb);
+            default:
+              return '';
+          }
+        });
+        setEducations(response);
+      }).catch((error) => {
+        console.log(error);
+      })
   }, []);
 
     function scrollUp(): void {
@@ -107,8 +129,18 @@ const MyCv = () => {
 
           <div className="flex-item-right">
             <h2>Education</h2>
-            <Education />
-            <Education />
+            {educations && educations.length ?(
+              educations.map((educationObj: EducationType, i: number) => {
+                return <div key={i}>
+                    <Education content={educationObj}/>
+                </div>
+              })
+            ):(
+              <>
+              <Education content={undefined}/>
+              <Education content={undefined}/>
+              </>
+            )}
 
             <h2>Licenses and certifications</h2>
             <div className="container-experiences">1</div>

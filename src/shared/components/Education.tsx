@@ -1,15 +1,31 @@
 import React from 'react';
-import stackTech from "../../shared/static/stackTech.png";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 
-const Education = () => {
+const Education = (props: any) => {
 
     return (
         <div className="education-card">
             <div className="experience-header">
-                <img className="experience-picture" src={stackTech} alt="stackTech" loading="lazy" />
-                <h6><i className="bi bi-geo-alt-fill"></i>University of Modena and Reggio Emilia</h6>
-                <h6><i className="bi bi-mortarboard-fill"></i>Master in Computer Science 2017-2020</h6>
+                {props.content && props.content.length ? (
+                    <>
+                        <img className="experience-picture" src={props.content.uniLogo} alt=" " loading="lazy" />
+                        <h6><i className="bi bi-geo-alt-fill"></i>{props.content.university}</h6>
+                        <h6><i className="bi bi-mortarboard-fill"></i>{props.content.degree} {props.content.startDate}-{props.content.endDate}</h6>
+                    </>
+                ) : (
+                    <>
+                        <Skeleton
+                            className="experience-picture"
+                            variant="circle"
+                            width={50}
+                            height={50}
+                        />
+                        <h6 className="skeleton-row"><i className="bi bi-geo-alt-fill"></i><Skeleton variant="text" width={200} /></h6>
+                        <h6 className="skeleton-row"><i className="bi bi-mortarboard-fill"></i><Skeleton variant="text" width={200} /></h6>
+                    </>
+                )}
+
             </div>
         </div>
     );

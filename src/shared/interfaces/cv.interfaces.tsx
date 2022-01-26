@@ -19,3 +19,12 @@ export interface TechnologySide {
     side: string;
     description: string;
 }
+
+export interface Education {
+    university: string;
+    degree : string;
+    startDate: string;
+    endDate: string;
+    uniLogo?: string; 
+    Description?: string;
+}
