@@ -1,5 +1,5 @@
-import Skeleton from "@material-ui/lab/Skeleton";
 import { Certification as certType } from '../interfaces/cv.interfaces';
+import CertificationSkeleton from './CertificationSkeleton';
 
 const Certification = (props: any) => {
 
@@ -20,39 +20,9 @@ const Certification = (props: any) => {
                     </>
                     ) : (
                     <>
-                            <div className="certification-content">
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton
-                                    className="experience-picture"
-                                    variant="circle"
-                                    width={50}
-                                    height={50}
-                                />
-                            </div>
-                            <div className="certification-content">
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton
-                                    className="experience-picture"
-                                    variant="circle"
-                                    width={50}
-                                    height={50}
-                                />
-                            </div>
-                            <div className="certification-content">
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton variant="text" width={120} />
-                                <Skeleton
-                                    className="experience-picture"
-                                    variant="circle"
-                                    width={50}
-                                    height={50}
-                                />
-                            </div>
+                        <CertificationSkeleton />
+                        <CertificationSkeleton />
+                        <CertificationSkeleton />
                     </>)}
             </div>
         </div>
