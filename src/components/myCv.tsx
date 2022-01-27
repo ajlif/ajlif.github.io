@@ -4,19 +4,23 @@ import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
 import Certification from "../shared/components/Certification";
 import ajlif from "../shared/static/ajlif.jpeg";
-import { getExperiences, getProfileInformations, getEducation } from "../services/cv.service";
+import { getExperiences, getProfileInformations, getEducation, getCertifications } from "../services/cv.service";
 import Skeleton from "@material-ui/lab/Skeleton";
 import alten from "../shared/static/alten.png";
 import bgiTunis from "../shared/static/bgiTunis.jpg";
 import otConsulting from "../shared/static/otConsulting.jpeg";
 import unimore from "../shared/static/unimore.jpg";
+import britsh from "../shared/static/britsh.png";
+import institutfr from "../shared/static/institutfr.png";
+import uniprg from "../shared/static/uniprg.jpg";
 import fsb from "../shared/static/fsb.png";
-import { Education as EducationType, Experience as ExperienceType } from "../shared/interfaces/cv.interfaces";
+import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType } from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () => {
   const [presentations, setPresentations] = useState('');
   const [experiences, setExperiences] = useState([]);
   const [educations, setEducations] = useState([]);
+  const [certifications, setCertifications] = useState([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
 
   useEffect(() => {
@@ -78,6 +82,27 @@ const MyCv = () => {
       })
   }, []);
 
+  useEffect(() => {
+    getCertifications()
+      .then((response: any) => {
+        response.map((certif: CertificationType) => {
+          switch (true) {
+            case certif?.name?.toLowerCase().includes('ielts'):
+              return (certif.organizationLogo = britsh);
+            case certif?.name?.toLowerCase().includes('tcf'):
+              return (certif.organizationLogo = institutfr);
+            case certif?.name?.toLowerCase().includes('celi'):
+              return (certif.organizationLogo = uniprg);
+            default:
+              return '';
+          }
+        });
+        setCertifications(response);
+      }).catch((error) => {
+        console.log(error);
+      })
+  }, []);
+
     function scrollUp(): void {
       window.scrollTo({
         top: 0,
@@ -113,6 +138,7 @@ const MyCv = () => {
 
       <div className="container-cv">
         <div className="flex-container">
+
           <div className="flex-item-left">
             <h2>Experience</h2>
             {experiences && experiences.length ? (
@@ -143,8 +169,15 @@ const MyCv = () => {
             )}
 
             <h2>Licenses and certifications</h2>
-            <div className="container-experiences">1</div>
-            <Certification />
+            {certifications && certifications.length ?(
+              <>
+                <Certification content={certifications}/>
+              </>
+            ):(
+              <>
+              <Certification content={undefined}/>
+              </>
+            )}
 
             <h2>Skills and endorsements</h2>
             <div className="skill-container">

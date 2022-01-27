@@ -1,6 +1,5 @@
 import axios from "axios";
-import { Experience } from "../shared/interfaces/cv.interfaces";
-import { Education } from "../shared/interfaces/cv.interfaces";
+import { Experience, Certification, Education } from "../shared/interfaces/cv.interfaces";
 
 const baseURL = "https://jsonplaceholder.typicode.com";
 
@@ -72,12 +71,29 @@ let masterDegree : Education = {
     endDate: '2020'
 }
 let bachelorDegree : Education = {
-    university: 'Faculty of Sciences of Bizerte (FSB) - University of Carthage',
+    university: 'Faculty of Sciences of Bizerte - University of Carthage',
     degree : 'Bachelor of Computer Science',
     startDate: '2012',
     endDate: '2015'
 }
 let education : Education[] = [masterDegree, bachelorDegree];
+
+let ielts: Certification ={
+    name:'Ielts (B2)',
+    issuingOrganization:'British Council',
+    issueDate:'2020'
+}
+let celi: Certification ={
+    name:'CELI (B2)',
+    issuingOrganization:'The University for Foreigners Perugia',
+    issueDate:'2017'
+}
+let tcf: Certification ={
+    name:'TCF (B2)',
+    issuingOrganization:'French Institute of Tunisia',
+    issueDate:'2017'
+}
+let certifications : Certification[] = [ielts, celi, tcf];
 
 axios.interceptors.response.use(function (response) {
     if (response) {
@@ -88,8 +104,8 @@ axios.interceptors.response.use(function (response) {
                 return experiences;
             case (`${baseURL}/users`):
                 return education;
-            case (`${baseURL}/photo`):
-                return "dr";
+            case (`${baseURL}/photos`):
+                return certifications;
             case (`${baseURL}/user`):
                 return "dd";
             default:
@@ -113,8 +129,8 @@ export function getEducation(): Promise<any> {
     return axios.get(`${baseURL}/users`);
 }
 
-export function getCertifications() {
-    axios.get(`${baseURL}/photos`);
+export function getCertifications():Promise<any> {
+   return axios.get(`${baseURL}/photos`);
 }
 
 export function getSkills() {

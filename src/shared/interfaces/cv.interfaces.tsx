@@ -28,3 +28,10 @@ export interface Education {
     uniLogo?: string; 
     Description?: string;
 }
+
+export interface Certification{
+    name:string;
+    issuingOrganization: string;
+    issueDate: string;
+    organizationLogo?: string;
+}
