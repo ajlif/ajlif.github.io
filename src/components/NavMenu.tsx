@@ -2,15 +2,9 @@ import * as React from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
-//import {getInitialData} from '../services/Session.service';
+import ajLogo from '../shared/static/ajLogo.png';
 import Skeleton from '@material-ui/lab/Skeleton';
 import './NavMenu.scss';
-
-/*
-interface IProps {
-    children: React.ReactNode;
-    // any other props that come into the component
-} */
 
 type navMenuState = {
     isOpen: boolean,
@@ -33,27 +27,12 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
         //this.fetchInitialData();
     }
 
-   /* fetchInitialData = () => {
-        let self: any = this;
-        getInitialData().then(response => {
-            if (response)
-                self.setState({
-                    name: response?.Nome || "",
-                    surName: response?.Cognome || "",
-                    istitute: response?.Istituto || "",
-                    isLoading: false
-                });
-        }, reason => {
-            console.error(reason);
-        });
-    }*/
-
     getInstituteLogo = (institute: string) : any => {
         switch (institute){
-            case '00001': 
-                return "credemAssicurazioniLogo";
-            case "00002" :
-                return "credemAssicurazioniLogo";
+            case '1': 
+                return '';
+            case "2" :
+                return '';
         }
     }
 
@@ -63,11 +42,10 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
             <header>
                 <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow" light>
                         <Container>
-                            <NavbarToggler onClick={this.toggle} className="" />
-
+                            <NavbarToggler onClick={this.toggle} />
                             {isLoading ? (
                                     <>
-                                    <Skeleton className="m-2" variant="rect" width={100}></Skeleton>
+                                    <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy'/>
                                     </>
                                 ) : (
                                     <>
@@ -76,11 +54,20 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
                                 )}
                             
                             <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
-                                <ul className="navbar-nav flex-grow">
-                                    <NavItem>
-                                        <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
-                                    </NavItem>
-                                </ul>
+                            <ul className="navbar-nav flex-grow">
+                                <NavItem>
+                                    <NavLink exact tag={RRNavLink} to="/background" activeClassName="menu-selected"><strong className="menu">My Background</strong></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className="menu">My trips</strong></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink exact tag={RRNavLink} to="/pictures" activeClassName="menu-selected"><strong className="menu">My pictures</strong></NavLink>
+                                </NavItem>
+                            </ul>
                             </Collapse>
 
                             <div className="d-flex flex-row-reverse">
