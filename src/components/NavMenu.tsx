@@ -59,7 +59,7 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
                                     <NavLink exact tag={RRNavLink} to="/background" activeClassName="menu-selected"><strong className="menu">My Background</strong></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
+                                    <NavLink exact tag={RRNavLink} to="/cv" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className="menu">My trips</strong></NavLink>
