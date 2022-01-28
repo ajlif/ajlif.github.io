@@ -14,18 +14,18 @@ import britsh from "../shared/static/britsh.png";
 import institutfr from "../shared/static/institutfr.png";
 import uniprg from "../shared/static/uniprg.jpg";
 import fsb from "../shared/static/fsb.png";
-import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType } from "../shared/interfaces/cv.interfaces";
+import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType} from "../shared/interfaces/cv.interfaces";
 
-const MyCv = () => {
+const MyCv = () : JSX.Element => {
   const [presentations, setPresentations] = useState('');
-  const [experiences, setExperiences] = useState([]);
-  const [educations, setEducations] = useState([]);
-  const [certifications, setCertifications] = useState([]);
+  const [experiences, setExperiences] = useState<ExperienceType[]>([]);
+  const [educations, setEducations] = useState<EducationType[]>([]);
+  const [certifications, setCertifications] = useState<CertificationType[]>([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
 
   useEffect(() => {
     getProfileInformations()
-      .then((response: any) => {
+      .then((response: string) => {
         setPresentations(response);
       })
       .catch((error) => {
@@ -42,7 +42,7 @@ const MyCv = () => {
 
   useEffect(() => {
     getExperiences()
-      .then((response: any) => {
+      .then((response: ExperienceType[]) => {
         response.map((experience: ExperienceType) => {
           switch (true) {
             case experience?.company?.toLowerCase().includes('alten'):
@@ -65,7 +65,7 @@ const MyCv = () => {
 
   useEffect(() => {
     getEducation()
-      .then((response: any) => {
+      .then((response: EducationType[]) => {
         response.map((education: EducationType) => {
           switch (true) {
             case education?.university?.toLowerCase().includes('modena'):
@@ -84,7 +84,7 @@ const MyCv = () => {
 
   useEffect(() => {
     getCertifications()
-      .then((response: any) => {
+      .then((response: CertificationType[]) => {
         response.map((certif: CertificationType) => {
           switch (true) {
             case certif?.name?.toLowerCase().includes('ielts'):
@@ -120,6 +120,7 @@ const MyCv = () => {
       <div className="header-cv">
         <h1>container fluid</h1>
         <h1>container fluid</h1>
+        <img className="presentation-picture" src={ajlif} alt="stackTech" />
         <div className="presentation-card">
           <h4>
             {presentations ? (
@@ -133,7 +134,6 @@ const MyCv = () => {
             )}
           </h4>
         </div>
-        <img className="presentation-picture" src={ajlif} alt="stackTech" />
       </div>
 
       <div className="container-cv">

@@ -1,7 +1,6 @@
-import React from 'react';
 
 
-const Skill = () => {
+const Skill = (): JSX.Element => {
     
     return (
         <div className="skill">

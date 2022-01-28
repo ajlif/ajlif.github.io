@@ -1,7 +1,7 @@
 import { Project } from "../interfaces/cv.interfaces";
 import Skeleton from "@material-ui/lab/Skeleton";
 
-const Experience = (props: any) => {
+const Experience = (props: any): JSX.Element => {
     return (
         <div className="experience-card">
             {props && props.content ? (

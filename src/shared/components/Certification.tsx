@@ -1,7 +1,7 @@
 import { Certification as certType } from '../interfaces/cv.interfaces';
 import CertificationSkeleton from './CertificationSkeleton';
 
-const Certification = (props: any) => {
+const Certification = (props: any): JSX.Element => {
 
     return (
         <div className="certification-card">

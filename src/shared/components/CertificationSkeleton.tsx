@@ -1,6 +1,6 @@
 import Skeleton from "@material-ui/lab/Skeleton";
 
-const CertificationSkeleton = () => {
+const CertificationSkeleton = (): JSX.Element => {
 
     return (
         <div className="certification-content">

@@ -1,8 +1,7 @@
-import React from 'react';
 import Skeleton from "@material-ui/lab/Skeleton";
 
 
-const Education = (props: any) => {
+const Education = (props: any): JSX.Element => {
 
     return (
         <div className="education-card">

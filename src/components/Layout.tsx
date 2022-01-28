@@ -1,15 +1,15 @@
 import * as React from 'react';
 import NavMenu from './NavMenu';
 
-export default class Layout extends React.PureComponent<{}, { children?: React.ReactNode }> {
-    public render() {
+const Layout = (props:any): JSX.Element =>  {
         return (
             <React.Fragment>
                 <NavMenu />
                 <div>
-                    {this.props.children}
+                    {props.children}
                 </div>
             </React.Fragment>
         );
-    }
 }
+
+export default Layout;
