@@ -35,3 +35,14 @@ export interface Certification{
     issueDate: string;
     organizationLogo?: string;
 }
+
+export interface Skill{
+    idCategory: 1 | 2 | 3 | 4; 
+    /*
+     1: language
+     2: framework
+     3: db
+     4:tools
+     */
+    name:string;
+}

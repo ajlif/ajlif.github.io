@@ -281,12 +281,23 @@ html {
 }
 
 .skill {
-  background-color: $sucess-color;
   display: inline-block;
   color: $white-color;
   border-radius: 50rem;
   margin-right: 5px;
   margin-bottom: 5px;
+}
+.skill-language {
+  background-color: #81017f;
+}
+.skill-framework {
+  background-color: #9c1572;
+}
+.skill-db {
+  background-color: #c3335d;
+}
+.skill-tools {
+  background-color: #d94353;
 }
 .skill > span {
   padding: 0.35em 0.65em;

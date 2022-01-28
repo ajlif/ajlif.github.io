@@ -4,7 +4,7 @@ import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
 import Certification from "../shared/components/Certification";
 import ajlif from "../shared/static/ajlif.jpeg";
-import { getExperiences, getProfileInformations, getEducation, getCertifications } from "../services/cv.service";
+import { getExperiences, getProfileInformations, getEducation, getCertifications, getSkills } from "../services/cv.service";
 import Skeleton from "@material-ui/lab/Skeleton";
 import alten from "../shared/static/alten.png";
 import bgiTunis from "../shared/static/bgiTunis.jpg";
@@ -14,13 +14,14 @@ import britsh from "../shared/static/britsh.png";
 import institutfr from "../shared/static/institutfr.png";
 import uniprg from "../shared/static/uniprg.jpg";
 import fsb from "../shared/static/fsb.png";
-import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType} from "../shared/interfaces/cv.interfaces";
+import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType} from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () : JSX.Element => {
   const [presentations, setPresentations] = useState('');
   const [experiences, setExperiences] = useState<ExperienceType[]>([]);
   const [educations, setEducations] = useState<EducationType[]>([]);
   const [certifications, setCertifications] = useState<CertificationType[]>([]);
+  const [skills, setSkills] = useState<skillType[]>([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
 
   useEffect(() => {
@@ -98,6 +99,15 @@ const MyCv = () : JSX.Element => {
           }
         });
         setCertifications(response);
+      }).catch((error) => {
+        console.log(error);
+      })
+  }, []);
+
+  useEffect(() => {
+    getSkills()
+      .then((response: skillType[]) => {
+        setSkills(response || []);
       }).catch((error) => {
         console.log(error);
       })
@@ -181,12 +191,16 @@ const MyCv = () : JSX.Element => {
 
             <h2>Skills and endorsements</h2>
             <div className="skill-container">
-              <Skill />
-              <Skill />
-              <Skill />
-              <Skill />
-              <Skill />
-              <Skill />
+              {skills && skills.length ? skills.map((skillObj: skillType,index: number) => {
+                return <Skill key={index} skill={skillObj}/>
+              }):
+              <>
+              <Skill undefined/>
+              <Skill undefined/>
+              <Skill undefined/>
+              <Skill undefined/>
+              </>
+              }
             </div>
           </div>
         </div>

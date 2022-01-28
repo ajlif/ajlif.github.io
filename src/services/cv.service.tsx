@@ -1,11 +1,11 @@
 import axios from "axios";
-import { Experience, Certification, Education } from "../shared/interfaces/cv.interfaces";
+import { Experience, Certification, Education, Skill } from "../shared/interfaces/cv.interfaces";
 
 const baseURL = "https://jsonplaceholder.typicode.com";
 
 let experienceSiemens: Experience = {
-    role: 'Software Engineer',
-    company: 'Alten @ Siemens',
+    role: 'Software Engineer @ Siemens',
+    company: 'Alten',
     cityAndCountry: 'Milan, Italy',
     from: 'Oct 2021',
     to: 'Present',
@@ -95,6 +95,11 @@ let tcf: Certification ={
 }
 let certifications : Certification[] = [ielts, celi, tcf];
 
+let skills: Skill[] = [{ idCategory: 1, name: 'Javascript' }, { idCategory: 1, name: 'Typescript' }, { idCategory: 1, name: 'Java' }, { idCategory: 1, name: 'Python' },
+{ idCategory: 2, name: 'Angular' }, { idCategory: 2, name: 'React' }, { idCategory: 2, name: 'Express js' }, { idCategory: 2, name: 'Django' }, { idCategory: 2, name: 'Spring' },
+{ idCategory: 3, name: 'Visual studio code' }, { idCategory: 3, name: 'Eclipse' }, { idCategory: 3, name: 'Postman' }, { idCategory: 3, name: 'Docker' }, { idCategory: 3, name: 'Git' },
+{ idCategory: 4, name: 'Oracle' }, { idCategory: 4, name: 'MySql' }, { idCategory: 4, name: 'MongoDb' }]; 
+
 axios.interceptors.response.use(function (response) {
     if (response) {
         switch (response.request ? response.request.responseURL : '') {
@@ -106,8 +111,8 @@ axios.interceptors.response.use(function (response) {
                 return education;
             case (`${baseURL}/photos`):
                 return certifications;
-            case (`${baseURL}/user`):
-                return "dd";
+            case (`${baseURL}/todos`):
+                return skills;
             default:
                 return "";
         }
@@ -133,6 +138,6 @@ export function getCertifications():Promise<any> {
    return axios.get(`${baseURL}/photos`);
 }
 
-export function getSkills() {
-    axios.get(`${baseURL}/user`);
+export function getSkills():Promise<any> {
+   return axios.get(`${baseURL}/todos`);
 }
