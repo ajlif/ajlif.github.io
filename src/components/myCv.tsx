@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Experience from "../shared/components/Experience";
 import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
@@ -23,11 +23,19 @@ const MyCv = () : JSX.Element => {
   const [certifications, setCertifications] = useState<CertificationType[]>([]);
   const [skills, setSkills] = useState<skillType[]>([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     getProfileInformations()
       .then((response: string) => {
-        setPresentations(response);
+        mounted.current && setPresentations(response);
       })
       .catch((error) => {
         console.log(error);
@@ -56,7 +64,7 @@ const MyCv = () : JSX.Element => {
               return '';
           }
         });
-        setExperiences(response);
+        mounted.current && setExperiences(response);
       }).catch((error) => {
         console.log(error);
       }).finally(() => {
@@ -77,7 +85,7 @@ const MyCv = () : JSX.Element => {
               return '';
           }
         });
-        setEducations(response);
+        mounted.current && setEducations(response);
       }).catch((error) => {
         console.log(error);
       })
@@ -98,7 +106,7 @@ const MyCv = () : JSX.Element => {
               return '';
           }
         });
-        setCertifications(response);
+        mounted.current && setCertifications(response);
       }).catch((error) => {
         console.log(error);
       })
@@ -107,7 +115,7 @@ const MyCv = () : JSX.Element => {
   useEffect(() => {
     getSkills()
       .then((response: skillType[]) => {
-        setSkills(response || []);
+        mounted.current && setSkills(response || []);
       }).catch((error) => {
         console.log(error);
       })
