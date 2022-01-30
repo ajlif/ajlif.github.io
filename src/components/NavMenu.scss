@@ -334,15 +334,17 @@ html {
   color: $white-color;
 }
 
-.options > button {
+.options > button, a>button {
   margin-right: 5px;
-  border-radius: 50%;
-  color: $black-color;
-  background-color: $white-color;
-  border: 1px solid $black-color;
+  border-radius: 7px;
+  color: #08acb4;
+  background-color: #252933;
+  border: none;
   width: 50px;
   height: 50px;
-  transition: 0.1s;
+}
+.options :hover {
+  color: #54d2a3 ;
 }
 
 .footer {

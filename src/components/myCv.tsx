@@ -215,13 +215,15 @@ const MyCv = () : JSX.Element => {
       </div>
 
       <div className="options">
-        <button>
-          <a href="mailto:alajlif@gmail.com"><i className="bi bi-envelope-plus-fill"></i></a>
-        </button>
+        <a href="mailto:alajlif@gmail.com">
+          <button>
+            <i className="bi bi-envelope-plus-fill"></i>
+          </button>
+        </a>
         <button>
           <i className="bi bi-download"></i>
         </button>
-        <button onClick={scrollUp} className={showScrollUp ? '':'hidden'}>
+        <button onClick={scrollUp} className={showScrollUp ? '' : 'hidden'}>
           <i className="bi bi-arrow-up-circle-fill"></i>
         </button>
       </div>
