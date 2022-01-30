@@ -56,13 +56,16 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
                         <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <NavLink exact tag={RRNavLink} to="/background" activeClassName="menu-selected"><strong className="menu">My Background</strong></NavLink>
-                                </NavItem>
-                                <NavItem>
                                     <NavLink exact tag={RRNavLink} to="/cv" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className="menu">My trips</strong></NavLink>
+                                    <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className="menu">My Projects</strong></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className="menu">My FE tips</strong></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className="menu">My Trips</strong></NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink exact tag={RRNavLink} to="/pictures" activeClassName="menu-selected"><strong className="menu">My pictures</strong></NavLink>
