@@ -5,7 +5,7 @@ const Certification = (props: any): JSX.Element => {
 
     return (
         <div className="certification-card">
-            <div className="experience-header">
+            <div>
                 {props && props.content ? (
                     <>
                         {props.content.map((certObj: certType, i: number) => {
