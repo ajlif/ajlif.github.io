@@ -73,6 +73,7 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
                             </ul>
                         </Collapse>
 
+                        {/*
                         <div className="d-flex flex-row-reverse">
                             {isLoading ? (
                                 <>
@@ -86,6 +87,7 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
                                 </>
                             )}
                         </div>
+                        */}
                     </Container>
                 </Navbar>
             </header>

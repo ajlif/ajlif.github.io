@@ -5,7 +5,7 @@ $warning-color: #fbe34c;
 $black-color: #000000;
 $main-gradient: linear-gradient(to left, #da4453, #800080);
 $card-hover-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; 
+  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 $card-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 a.navbar-brand {
   white-space: normal;
@@ -51,7 +51,6 @@ html {
   .experience-card {
     width: 80vw;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -66,9 +65,17 @@ html {
     flex: 100%;
     text-align: center;
   }
-.navbar-nav{
-  margin-left: 0px;
-}
+  .navbar-nav {
+    margin-left: 0px;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .options > * {
+    margin-top: 3px;
+  }
 }
 
 .box-shadow {
@@ -79,16 +86,16 @@ html {
   height: 50px;
   width: 100px;
 }
-.img-logo{
+.img-logo {
   width: 50px;
   height: 50px;
 }
 
-.navbar-nav{
+.navbar-nav {
   margin-left: 50px;
 }
 
-.d-sm-inline-flex{
+.d-sm-inline-flex {
   z-index: 100;
 }
 
@@ -253,7 +260,7 @@ html {
   margin-right: auto;
 }
 
-.certification-card> * {
+.certification-card > * {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -329,12 +336,13 @@ html {
 
 .options {
   position: fixed;
-  right: 15px;
+  right: 5px;
   bottom: 15px;
   color: $white-color;
 }
 
-.options > button, a>button {
+.options > button,
+a > button {
   margin-right: 5px;
   border-radius: 7px;
   color: #08acb4;
@@ -344,7 +352,7 @@ html {
   height: 50px;
 }
 .options :hover {
-  color: #54d2a3 ;
+  color: #54d2a3;
 }
 
 .footer {
@@ -452,5 +460,5 @@ html {
 }
 
 .center-div {
-justify-content: center;
+  justify-content: center;
 }

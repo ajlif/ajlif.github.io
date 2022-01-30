@@ -14,6 +14,7 @@ import britsh from "../shared/static/britsh.png";
 import institutfr from "../shared/static/institutfr.png";
 import uniprg from "../shared/static/uniprg.jpg";
 import fsb from "../shared/static/fsb.png";
+import anymodule from "../shared/static/anymodule.pdf";
 import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType} from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () : JSX.Element => {
@@ -220,9 +221,11 @@ const MyCv = () : JSX.Element => {
             <i className="bi bi-envelope-plus-fill"></i>
           </button>
         </a>
-        <button>
-          <i className="bi bi-download"></i>
-        </button>
+        <a href={anymodule} download='ala_jlif_CV'>
+          <button>
+            <i className="bi bi-download"></i>
+          </button>
+        </a>
         <button onClick={scrollUp} className={showScrollUp ? '' : 'hidden'}>
           <i className="bi bi-arrow-up-circle-fill"></i>
         </button>
