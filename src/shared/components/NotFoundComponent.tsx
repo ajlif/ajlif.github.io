@@ -11,7 +11,7 @@ const NotFoundComponent = (): JSX.Element => {
                 <h3>Error code: 404 Please use the menu above instead.</h3>
             </div>
             <div>
-                <img src={notfound} alt=" " />
+                <img className='picture-404' src={notfound} alt=" " />
             </div>
         </div>
     );

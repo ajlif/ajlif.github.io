@@ -4,9 +4,7 @@ const UnderConstruction = (): JSX.Element => {
 
     return (
         <div className="container-cv skeleton-row center-div">
-            <div>
-                <img src={underconstruction} alt=" " />
-            </div>
+                <img className='under-cons-picture' src={underconstruction} alt=" " />
         </div>
     );
 }

@@ -9,7 +9,7 @@ import UnderConstruction from './shared/components/UnderConstruction';
 const App = () => (
   <Layout>
     <Switch>
-      <Route exact path='/cv' component={MyCv} />
+      <Route exact path='/' component={MyCv} />
       <Route exact path='/trips' component={UnderConstruction} />
       <Route exact path='/projects' component={UnderConstruction} />
       <Route exact path='/frontendtips' component={UnderConstruction} />

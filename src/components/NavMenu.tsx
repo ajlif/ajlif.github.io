@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link, NavLink as RRNavLink } from 'react-router-dom';
-import Avatar from '@material-ui/core/Avatar';
 import ajLogo from '../shared/static/ajLogo.png';
-import Skeleton from '@material-ui/lab/Skeleton';
 import './NavMenu.scss';
 
 type navMenuState = {
@@ -37,7 +35,7 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
     }
 
     public render() {
-        const { isOpen, name, surName, istitute, isLoading } = this.state;
+        const { isOpen, istitute, isLoading } = this.state;
         return (
             <header>
                 <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow" light>
@@ -56,7 +54,7 @@ export default class NavMenu extends React.PureComponent<{}, navMenuState> {
                         <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <NavLink exact tag={RRNavLink} to="/cv" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
+                                    <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className="menu">My Projects</strong></NavLink>

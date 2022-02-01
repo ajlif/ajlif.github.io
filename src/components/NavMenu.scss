@@ -76,6 +76,12 @@ html {
   .options > * {
     margin-top: 3px;
   }
+  .under-cons-picture {
+    width: 70vw;
+  }
+  .picture-404 {
+    width: 35vw;
+  }
 }
 
 .box-shadow {
@@ -305,8 +311,7 @@ html {
 }
 
 .presentation-picture:hover {
-  width: 70px;
-  height: 70px;
+  transform: scale(1.3);
 }
 
 .skill {
@@ -339,6 +344,7 @@ html {
   right: 5px;
   bottom: 15px;
   color: $white-color;
+  z-index: 4;
 }
 
 .options > button,
@@ -350,9 +356,13 @@ a > button {
   border: none;
   width: 50px;
   height: 50px;
+  transition: 0.2s;
 }
 .options :hover {
   color: #54d2a3;
+}
+.options :active {
+  font-size: 20px;
 }
 
 .footer {
@@ -461,4 +471,8 @@ a > button {
 
 .center-div {
   justify-content: center;
+}
+
+img{
+  image-rendering: -webkit-optimize-contrast;
 }
