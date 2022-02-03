@@ -137,8 +137,6 @@ const MyCv = () : JSX.Element => {
   return (
     <div>
       <div className="header-cv">
-        <h1>container fluid</h1>
-        <h1>container fluid</h1>
         <img className="presentation-picture" src={ajlif} alt="stackTech" />
         <div className="presentation-card">
           <h4>
