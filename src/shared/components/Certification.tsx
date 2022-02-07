@@ -1,30 +1,29 @@
-import React from 'react';
-import stackTech from "../../shared/images/stackTech.png";
+import { Certification as certType } from '../interfaces/cv.interfaces';
+import CertificationSkeleton from './CertificationSkeleton';
 
-
-const Certification = () => {
+const Certification = (props: any): JSX.Element => {
 
     return (
         <div className="certification-card">
-            <div className="experience-header">
-            <div className="certification-content">
-                <h6>IELTS - (B2) </h6>
-                <h6>Britsh Council</h6>
-                <h6>Issued 2017 </h6>
-                <img className="certification-picture" src={stackTech} alt="stackTech" loading="lazy" />
-            </div>
-            <div className="certification-content">
-                <h6>IELTS - (B2) </h6>
-                <h6>Britsh Council</h6>
-                <h6>Issued 2017 </h6>
-                <img className="certification-picture" src={stackTech} alt="stackTech" loading="lazy" />
-            </div>
-            <div className="certification-content">
-                <h6>IELTS - (B2) </h6>
-                <h6>Britsh Council</h6>
-                <h6>Issued 2017 </h6>
-                <img className="certification-picture" src={stackTech} alt="stackTech" loading="lazy" />
-            </div>
+            <div>
+                {props && props.content ? (
+                    <>
+                        {props.content.map((certObj: certType, i: number) => {
+                          return  <div className="certification-content" key={i}>
+                                <h5>{certObj?.name} </h5>
+                                <h6>{certObj?.issuingOrganization}</h6>
+                                <h6>Issued {certObj?.issueDate} </h6>
+                                <img className="certification-picture" src={certObj?.organizationLogo} alt="stackTech" loading="lazy" />
+                            </div>
+                        })}
+
+                    </>
+                    ) : (
+                    <>
+                        <CertificationSkeleton />
+                        <CertificationSkeleton />
+                        <CertificationSkeleton />
+                    </>)}
             </div>
         </div>
     );
