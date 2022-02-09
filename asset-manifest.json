@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.599b5b4e.chunk.css",
-    "main.js": "./static/js/main.d5ebc447.chunk.js",
-    "main.js.map": "./static/js/main.d5ebc447.chunk.js.map",
+    "main.js": "./static/js/main.f2fc7338.chunk.js",
+    "main.js.map": "./static/js/main.f2fc7338.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.99936e5e.js",
     "runtime-main.js.map": "./static/js/runtime-main.99936e5e.js.map",
     "static/css/2.913b6ad9.chunk.css": "./static/css/2.913b6ad9.chunk.css",
@@ -14,10 +14,10 @@
     "static/css/2.913b6ad9.chunk.css.map": "./static/css/2.913b6ad9.chunk.css.map",
     "static/css/main.599b5b4e.chunk.css.map": "./static/css/main.599b5b4e.chunk.css.map",
     "static/js/2.eae92ad4.chunk.js.LICENSE.txt": "./static/js/2.eae92ad4.chunk.js.LICENSE.txt",
+    "static/media/AlaJlifCv.c2bfbbef.pdf": "./static/media/AlaJlifCv.c2bfbbef.pdf",
     "static/media/ajLogo.92a66ede.png": "./static/media/ajLogo.92a66ede.png",
     "static/media/ajlif.d6433197.jpeg": "./static/media/ajlif.d6433197.jpeg",
     "static/media/alten.c3afa6a5.png": "./static/media/alten.c3afa6a5.png",
-    "static/media/anymodule.cc7c3921.pdf": "./static/media/anymodule.cc7c3921.pdf",
     "static/media/bgiTunis.34624f6c.jpg": "./static/media/bgiTunis.34624f6c.jpg",
     "static/media/bootstrap-icons.css": "./static/media/bootstrap-icons.ea6f3dfe.woff",
     "static/media/fsb.fe631413.png": "./static/media/fsb.fe631413.png",
@@ -30,6 +30,6 @@
     "static/css/2.913b6ad9.chunk.css",
     "static/js/2.eae92ad4.chunk.js",
     "static/css/main.599b5b4e.chunk.css",
-    "static/js/main.d5ebc447.chunk.js"
+    "static/js/main.f2fc7338.chunk.js"
   ]
 }
