@@ -10,8 +10,8 @@ let experienceSiemens: Experience = {
     from: 'Oct 2021',
     to: 'Present',
     roleDescription: [{
-        name: 'Cerberus Portal',
-        description: 'Working on Cerberus Portal which is a secure and Cloud-based web portal that allows service providers to take the next step in digitalizing their service offering. Save costs and decrease travel times by knowing what is going on with your customer sites remotely. Increase your service efficiency by being able to see everything that is going on in one place.'
+        name: 'Siemens Smart Building',
+        description: `description isn't available: it will be added as soon as possible.`
     }]
 }
 let experienceOtConsulting: Experience = {
@@ -104,7 +104,7 @@ axios.interceptors.response.use(function (response) {
     if (response) {
         switch (response.request ? response.request.responseURL : '') {
             case (`${baseURL}/posts`):
-                return "Hi, My name is Ala, i'm a full stack developer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
+                return "Hi, My name is Ala, i'm a Software Engineer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i'm open to work.";
             case (`${baseURL}/comments`):
                 return experiences;
             case (`${baseURL}/users`):

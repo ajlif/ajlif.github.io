@@ -14,7 +14,7 @@ import britsh from "../shared/static/britsh.png";
 import institutfr from "../shared/static/institutfr.png";
 import uniprg from "../shared/static/uniprg.jpg";
 import fsb from "../shared/static/fsb.png";
-import anymodule from "../shared/static/anymodule.pdf";
+import AlaJlifCv from "../shared/static/AlaJlifCv.pdf";
 import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType} from "../shared/interfaces/cv.interfaces";
 
 const MyCv = () : JSX.Element => {
@@ -219,7 +219,7 @@ const MyCv = () : JSX.Element => {
             <i className="bi bi-envelope-plus-fill"></i>
           </button>
         </a>
-        <a href={anymodule} download='ala_jlif_CV'>
+        <a href={AlaJlifCv} download='AlaJlif_CV'>
           <button>
             <i className="bi bi-download"></i>
           </button>
@@ -238,9 +238,6 @@ const MyCv = () : JSX.Element => {
         </a>
         <a href="https://twitter.com/ala_j">
           <i className="bi bi-twitter social-footer"></i>
-        </a>
-        <a href="https://it-it.facebook.com/partir.P75">
-          <i className="bi bi-facebook social-footer"></i>
         </a>
       </div>
     </div>
