@@ -132,22 +132,6 @@ html {
   margin-left: $default-size;
 }
 
-.d-sm-inline-flex {
-  z-index: 100;
-}
-
-.divider {
-  padding-right: 10px;
-  border-left: 2px solid $secondary-color;
-}
-.divider-right {
-  border-right: 2px solid $secondary-color;
-}
-
-.modal-divider {
-  border-bottom: 2px solid $white-color;
-}
-
 .menu {
   color: $main-gradient;
 }
