@@ -26,7 +26,7 @@ let experienceOtConsulting: Experience = {
             description: `Implementation of a session management console used for video recognition of new customers.
             Technology stacks:
             Frontend: react + redux, bootstrap, material-UI, jest, react testing library.
-            Backend: ASP.Net.`
+            Backend: Node.js .`
         },
         {
             name: 'DIGMOB',
