@@ -3,7 +3,10 @@ $secondary-color: #e4e4e4;
 $white-color: #ffffff;
 $warning-color: #fbe34c;
 $black-color: #000000;
-$main-gradient: linear-gradient(to left, #da4453, #800080);
+$secondary-color : #da4453;
+$principal-color : #800080;
+$default-size:50px;
+$main-gradient: linear-gradient(to left, $secondary-color , $principal-color);
 $card-hover-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
   rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 $card-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -85,7 +88,7 @@ html {
 
   .presentation-card {
     z-index: 2;
-    height: 150px;
+    height: $default-size * 3;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -98,8 +101,8 @@ html {
     backdrop-filter: blur(10px);
   }
   .presentation-picture {
-    width: 50px;
-    height: 50px;
+    width: $default-size;
+    height: $default-size;
     border-radius: 50%;
     position: relative;
     display: flex;
@@ -117,16 +120,16 @@ html {
 }
 
 .logo {
-  height: 50px;
+  height: $default-size;
   width: 100px;
 }
 .img-logo {
-  width: 50px;
-  height: 50px;
+  width: $default-size;
+  height: $default-size;
 }
 
 .navbar-nav {
-  margin-left: 50px;
+  margin-left: $default-size;
 }
 
 .d-sm-inline-flex {
@@ -153,7 +156,7 @@ html {
   border-image: $main-gradient 1;
 }
 .menu > h1 {
-  font-size: 50px;
+  font-size: $default-size;
   border-bottom: 5px solid;
 }
 
@@ -305,7 +308,7 @@ html {
 @media (min-width: 575px) {
 .presentation-card {
   z-index: 2;
-  height: 150px;
+  height: $default-size * 3;
   position: absolute;
   top: 100px;
   left: 0;
@@ -322,8 +325,8 @@ html {
 }
 
 .presentation-picture {
-  width: 50px;
-  height: 50px;
+  width: $default-size;
+  height: $default-size;
   border-radius: 50%;
   position: absolute;
   top: 75px;
@@ -353,7 +356,7 @@ html {
   margin-bottom: 5px;
 }
 .skill-language {
-  background-color: #81017f;
+  background-color: $principal-color;
 }
 .skill-framework {
   background-color: #9c1572;
@@ -362,7 +365,7 @@ html {
   background-color: #c3335d;
 }
 .skill-tools {
-  background-color: #d94353;
+  background-color: $secondary-color;
 }
 .skill > span {
   padding: 0.35em 0.65em;
@@ -385,8 +388,8 @@ a > button {
   color: #08acb4;
   background-color: #252933;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: $default-size;
+  height: $default-size;
   transition: 0.2s;
 }
 .options :hover {
@@ -401,7 +404,7 @@ a > button {
   display: flex;
   justify-content: center;
   color: $white-color;
-  border-top: 5px solid #800080;
+  border-top: 5px solid $principal-color;
 }
 
 .footer > * {
@@ -415,7 +418,7 @@ a > button {
 }
 
 .social-footer:hover {
-  color: #800080;
+  color: $principal-color;
 }
 
 /* Experiences components */
@@ -440,7 +443,7 @@ a > button {
 .experience-header {
   position: absolute;
   width: inherit;
-  height: 50px;
+  height: $default-size;
   left: -20px;
   top: 20px;
   display: flex;
@@ -449,8 +452,8 @@ a > button {
 }
 
 .experience-picture {
-  width: 50px;
-  height: 50px;
+  width: $default-size;
+  height: $default-size;
   border-radius: 50%;
   margin-right: 10px;
   box-shadow: $card-shadow;
@@ -489,8 +492,8 @@ a > button {
 }
 
 .certification-picture {
-  width: 50px;
-  height: 50px;
+  width: $default-size;
+  height: $default-size;
   border-radius: 50%;
   border: 2px solid $white-color;
   box-shadow: $card-shadow;
