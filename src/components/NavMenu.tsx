@@ -3,6 +3,9 @@ import { Collapse, Container, Navbar, NavbarToggler, NavItem, NavLink } from 're
 import { NavLink as RRNavLink } from 'react-router-dom';
 import ajLogo from '../shared/static/ajLogo.png';
 import './NavMenu.scss';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import MaterialUISwitch from '../shared/components/MaterialUISwitch';
 
 const NavMenu = (): JSX.Element => {
 
@@ -13,6 +16,12 @@ return (
         <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow" light>
             <Container>
                 <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
+                <FormGroup>
+                    <FormControlLabel
+                        control={<MaterialUISwitch/>}
+                        label=""
+                    />
+                </FormGroup>
                 <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
                 <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
                     <ul className="navbar-nav flex-grow">
