@@ -10,6 +10,7 @@ import MaterialUISwitch from '../shared/components/MaterialUISwitch';
 const NavMenu = (): JSX.Element => {
 
 const [isOpen, setIsOpen] = useState(false);
+const [isDark, setMode] = useState(false);
 
 return (
     <header>
@@ -20,6 +21,8 @@ return (
                     <FormControlLabel
                         control={<MaterialUISwitch/>}
                         label=""
+                        onClick={() => setMode(!isDark)}
+                        checked={isDark}
                     />
                 </FormGroup>
                 <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
