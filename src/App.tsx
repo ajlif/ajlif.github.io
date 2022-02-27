@@ -6,7 +6,16 @@ import MyCv from './components/myCv';
 import NotFoundComponent from './shared/components/NotFoundComponent';
 import UnderConstruction from './shared/components/UnderConstruction';
 
-const App = () => (
+
+const themes = {
+  light: 'light',
+  dark: 'dark'
+};
+
+export const ThemeContext = React.createContext(themes);
+
+export const App = () => (
+  <ThemeContext.Provider value={themes}>
   <Layout>
     <Switch>
       <Route exact path='/' component={MyCv} />
@@ -18,6 +27,5 @@ const App = () => (
       <Route path='/*' component={NotFoundComponent} />
     </Switch>
   </Layout>
+  </ThemeContext.Provider>
 );
-
-export default App;

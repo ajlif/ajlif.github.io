@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useContext, useState } from "react";
 import { Collapse, Container, Navbar, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
 import ajLogo from '../shared/static/ajLogo.png';
@@ -6,47 +6,51 @@ import './NavMenu.scss';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MaterialUISwitch from '../shared/components/MaterialUISwitch';
+import { ThemeContext } from '../App';
 
 const NavMenu = (): JSX.Element => {
 
-const [isOpen, setIsOpen] = useState(false);
-const [isDark, setMode] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const theme = useContext(ThemeContext);
+    const [themes, setThemes] = useState(theme.light);
 
-return (
-    <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow" light>
-            <Container>
-                <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
-                <FormGroup>
-                    <FormControlLabel
-                        control={<MaterialUISwitch/>}
-                        label=""
-                        onClick={() => setMode(!isDark)}
-                        checked={isDark}
-                    />
-                </FormGroup>
-                <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
-                <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
-                    <ul className="navbar-nav flex-grow">
-                        <NavItem>
-                            <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className="menu">My Cv</strong></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className="menu">My Projects</strong></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className="menu">My FE tips</strong></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className="menu">My Trips</strong></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink exact tag={RRNavLink} to="/pictures" activeClassName="menu-selected"><strong className="menu">My pictures</strong></NavLink>
-                        </NavItem>
-                    </ul>
-                </Collapse>
+    const isLight = themes === theme.light;
 
-                {/*
+    return (
+        <header className={isLight? '':'header-dark'}>
+            <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow">
+                <Container>
+                    <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
+                    <FormGroup>
+                        <FormControlLabel
+                            control={<MaterialUISwitch />}
+                            label=""
+                            onClick={() => setThemes(themes === theme.light ? theme.dark : theme.light)}
+                            checked={themes === theme.dark}
+                        />
+                    </FormGroup>
+                    <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
+                    <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
+                        <ul className="navbar-nav flex-grow">
+                            <NavItem>
+                                <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My Cv</strong></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My Projects</strong></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My FE tips</strong></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My Trips</strong></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink exact tag={RRNavLink} to="/pictures" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My pictures</strong></NavLink>
+                            </NavItem>
+                        </ul>
+                    </Collapse>
+
+                    {/*
                         <div className="d-flex flex-row-reverse">
                             {isLoading ? (
                                 <>
@@ -61,9 +65,9 @@ return (
                             )}
                         </div>
                         */}
-            </Container>
-        </Navbar>
-    </header>
-);
+                </Container>
+            </Navbar>
+        </header>
+    );
 }
 export default NavMenu;

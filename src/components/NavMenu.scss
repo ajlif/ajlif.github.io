@@ -140,8 +140,9 @@ html {
 }
 
 .menu {
-  color: $main-gradient;
+  color: rgba(0,0,0,.55);;
 }
+
 .menu-selected {
   border-bottom: 5px solid;
   border-image: $main-gradient 1;
@@ -407,4 +408,14 @@ a > button {
 
 img{
   image-rendering: -webkit-optimize-contrast;
+}
+
+/* dark mode*/
+
+.header-dark {
+  background-color: $main-background;
+}
+
+.menu-dark {
+  color: $white-color;
 }
