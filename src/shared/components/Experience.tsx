@@ -1,9 +1,15 @@
 import { Project } from "../interfaces/cv.interfaces";
 import Skeleton from "@material-ui/lab/Skeleton";
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 const Experience = (props: any): JSX.Element => {
+
+    const {theme, setTheme} = useContext(ThemeContext);
+    const isLight = theme === 'light';
+
     return (
-        <div className="experience-card">
+        <div className={isLight ? 'experience-card':'experience-card card-dark'}>
             {props && props.content ? (
                 <>
                     <div className="experience-header">
@@ -31,7 +37,7 @@ const Experience = (props: any): JSX.Element => {
                             props.content.roleDescription.map(function (role: Project, i: number) {
                                 return (
                                     <div key={i}> 
-                                        <hr/>
+                                        <hr className='header-dark'/>
                                         <span>
                                             <i className="bi bi-stack"><b>{role.name}</b>:</i>
                                             {role.description}

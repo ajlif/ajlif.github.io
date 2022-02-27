@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Experience from "../shared/components/Experience";
 import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
@@ -16,6 +16,7 @@ import uniprg from "../shared/static/uniprg.jpg";
 import fsb from "../shared/static/fsb.png";
 import AlaJlifCv from "../shared/static/AlaJlifCv.pdf";
 import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType} from "../shared/interfaces/cv.interfaces";
+import { ThemeContext } from '../App';
 
 const MyCv = () : JSX.Element => {
   const [presentations, setPresentations] = useState('');
@@ -32,6 +33,9 @@ const MyCv = () : JSX.Element => {
       mounted.current = false;
     };
   }, []);
+
+  const {theme, setTheme} = useContext(ThemeContext);
+  const isLight = theme === 'light';
 
   useEffect(() => {
     getProfileInformations()
@@ -135,11 +139,11 @@ const MyCv = () : JSX.Element => {
     }
 
   return (
-    <div>
+    <div className={isLight ? '': 'header-dark'}>
       <div className="header-cv">
         <img className="presentation-picture" src={ajlif} alt="stackTech" />
         <div className="presentation-card">
-          <h4>
+          <h4 className={isLight ? '': 'title-dark'}>
             {presentations ? (
               presentations
             ) : (
@@ -157,7 +161,7 @@ const MyCv = () : JSX.Element => {
         <div className="flex-container">
 
           <div className="flex-item-left">
-            <h2>Experience</h2>
+            <h2 className={isLight ? '': 'title-dark'}>Experience</h2>
             {experiences && experiences.length ? (
               experiences.map(function (object: ExperienceType, i:number) {
                 return <div key={i}> <Experience content={object} /> </div>
@@ -171,7 +175,7 @@ const MyCv = () : JSX.Element => {
           </div>
 
           <div className="flex-item-right">
-            <h2>Education</h2>
+            <h2 className={isLight ? '': 'title-dark'}>Education</h2>
             {educations && educations.length ?(
               educations.map((educationObj: EducationType, i: number) => {
                 return <div key={i}>
@@ -185,7 +189,7 @@ const MyCv = () : JSX.Element => {
               </>
             )}
 
-            <h2>Licenses and certifications</h2>
+            <h2 className={isLight ? '': 'title-dark'}>Licenses and certifications</h2>
             {certifications && certifications.length ?(
               <>
                 <Certification content={certifications}/>
@@ -196,7 +200,7 @@ const MyCv = () : JSX.Element => {
               </>
             )}
 
-            <h2>Skills and endorsements</h2>
+            <h2 className={isLight ? '': 'title-dark'}>Skills and endorsements</h2>
             <div className="skill-container">
               {skills && skills.length ? skills.map((skillObj: skillType,index: number) => {
                 return <Skill key={index} skill={skillObj}/>

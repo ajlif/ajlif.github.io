@@ -1,10 +1,15 @@
 import Skeleton from "@material-ui/lab/Skeleton";
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 
 const Education = (props: any): JSX.Element => {
 
+    const {theme, setTheme} = useContext(ThemeContext);
+    const isLight = theme === 'light';
+
     return (
-        <div className="education-card">
+        <div className={isLight ? 'education-card':'education-card card-dark'}>
             <div className="experience-header">
                 {props.content ? (
                     <>

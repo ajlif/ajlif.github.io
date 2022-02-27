@@ -11,10 +11,10 @@ import { ThemeContext } from '../App';
 const NavMenu = (): JSX.Element => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const theme = useContext(ThemeContext);
-    const [themes, setThemes] = useState(theme.light);
+    const {theme, setTheme} = useContext(ThemeContext);
+    const [themes, setThemes] = useState(theme);
 
-    const isLight = themes === theme.light;
+    const isLight = themes === theme;
 
     return (
         <header className={isLight? '':'header-dark'}>
@@ -25,27 +25,27 @@ const NavMenu = (): JSX.Element => {
                         <FormControlLabel
                             control={<MaterialUISwitch />}
                             label=""
-                            onClick={() => setThemes(themes === theme.light ? theme.dark : theme.light)}
-                            checked={themes === theme.dark}
+                            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                            checked={theme === 'dark'}
                         />
                     </FormGroup>
                     <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
                     <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
                         <ul className="navbar-nav flex-grow">
                             <NavItem>
-                                <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My Cv</strong></NavLink>
+                                <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Cv</strong></NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My Projects</strong></NavLink>
+                                <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Projects</strong></NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My FE tips</strong></NavLink>
+                                <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My FE tips</strong></NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My Trips</strong></NavLink>
+                                <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Trips</strong></NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink exact tag={RRNavLink} to="/pictures" activeClassName="menu-selected"><strong className={isLight? 'menu':'menu-dark'}>My pictures</strong></NavLink>
+                                <NavLink exact tag={RRNavLink} to="/pictures" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My pictures</strong></NavLink>
                             </NavItem>
                         </ul>
                     </Collapse>

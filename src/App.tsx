@@ -5,17 +5,24 @@ import Layout from './components/Layout';
 import MyCv from './components/myCv';
 import NotFoundComponent from './shared/components/NotFoundComponent';
 import UnderConstruction from './shared/components/UnderConstruction';
+import { useState } from 'react';
 
 
 const themes = {
-  light: 'light',
-  dark: 'dark'
+  theme: 'light',
+  setTheme: (theme:string) => {}
 };
 
 export const ThemeContext = React.createContext(themes);
 
-export const App = () => (
-  <ThemeContext.Provider value={themes}>
+
+export const App = () => {
+  
+const [theme, setTheme] = useState('light');
+const value = { theme, setTheme };
+  
+  return(
+  <ThemeContext.Provider value={value}>
   <Layout>
     <Switch>
       <Route exact path='/' component={MyCv} />
@@ -28,4 +35,4 @@ export const App = () => (
     </Switch>
   </Layout>
   </ThemeContext.Provider>
-);
+);}
