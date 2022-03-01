@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Collapse, Container, Navbar, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
 import ajLogo from '../shared/static/ajLogo.png';
 import './NavMenu.scss';
@@ -20,7 +20,9 @@ const NavMenu = (): JSX.Element => {
         <header className={isLight? '':'header-dark'}>
             <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow">
                 <Container>
-                    <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
+                    <div className={isOpen ? 'burger--active' : 'burger'} onClick={() => setIsOpen(!isOpen)}>
+                        <div className="burger__patty"></div>
+                    </div>
                     <FormGroup>
                         <FormControlLabel
                             control={<MaterialUISwitch />}

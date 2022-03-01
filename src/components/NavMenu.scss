@@ -10,6 +10,7 @@ $main-gradient: linear-gradient(to left, $secondary-color , $principal-color);
 $card-hover-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
   rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 $card-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+$ease: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 /* dark mode colors*/
 $main-background: #0c121e;
@@ -411,7 +412,87 @@ img{
   image-rendering: -webkit-optimize-contrast;
 }
 
-/****** dark mode *******/
+/* burger menu */
+
+.burger {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  transition: $ease;
+  height: 20px;
+  
+  &__patty {
+    position: relative;
+    height: 2px;
+    width: 40px;
+    background: $main-gradient;
+    
+    &:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: $main-gradient;
+    }
+    
+    &:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: $main-gradient;
+    }
+  }
+  
+  &__patty,
+  &__patty:before,
+  &__patty:after {
+    will-change: transform;
+    transition: $ease;
+  }
+  
+  &--active {
+    cursor: pointer;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .burger__patty {
+      transform: rotate(90deg);
+      &:before {
+        transform: rotate(-45deg) translate(-7px,-7px) scaleX(0.7);
+      }
+      
+      &:after {
+        transform: rotate(45deg) translate(-7px,7px) scaleX(0.7);
+      }
+    }
+  }
+  
+  @media (min-width: 575px) {
+    display: none;
+    
+    &__patty {
+      transform: scale(0.8);
+      display: none;
+    }
+    
+    &--active {
+      .burger__patty {
+        transform: scale(0.8) rotate(90deg);
+      }
+    }
+  }
+}
+
+/* dark mode */
 
 .header-dark {
   background-color: $main-background;
