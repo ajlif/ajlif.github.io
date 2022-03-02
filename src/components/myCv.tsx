@@ -34,7 +34,7 @@ const MyCv = () : JSX.Element => {
     };
   }, []);
 
-  const {theme, setTheme} = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const isLight = theme === 'light';
 
   useEffect(() => {
