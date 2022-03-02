@@ -29,12 +29,6 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -61,7 +55,7 @@ html {
   .certification-card,
   .presentation-card,
   .experience-card {
-    width: 80vw;
+    width: 70vw;
   }
 }
 
