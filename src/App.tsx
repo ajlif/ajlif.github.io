@@ -16,12 +16,10 @@ const themes = {
 
 export const ThemeContext = React.createContext(themes);
 
-
-export const App = () => {
+export const App = (): JSX.Element => {
   
 const [theme, setTheme] = useState('light');
-const value = { theme, setTheme };
-  
+const value = { theme, setTheme }; 
   return(
   <ThemeContext.Provider value={value}>
   <Layout>
