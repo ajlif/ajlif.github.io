@@ -1,5 +1,5 @@
 name: CiCd My website
-on: [push]
+on: [push] 
 
 jobs:
   test:
@@ -25,11 +25,4 @@ jobs:
         run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
-  
-  production-deploy:
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    steps:
-      - name: deploy
-      - run: npm run deploy
-      - run: echo "This job's status is ${{ job.status }} 👏"
+
