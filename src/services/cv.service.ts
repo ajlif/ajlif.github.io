@@ -122,22 +122,22 @@ axios.interceptors.response.use(function (response) {
 });
 
 
-export function getProfileInformations(): Promise<any> {
+export function getProfileInformations(): Promise<string> {
     return axios.get(`${baseURL}/posts`);
 }
 
-export function getExperiences(): Promise<any> {
+export function getExperiences(): Promise<Experience[]> {
     return axios.get(`${baseURL}/comments`);
 }
 
-export function getEducation(): Promise<any> {
+export function getEducation(): Promise<Education[]> {
     return axios.get(`${baseURL}/users`);
 }
 
-export function getCertifications():Promise<any> {
+export function getCertifications():Promise<Certification[]> {
    return axios.get(`${baseURL}/photos`);
 }
 
-export function getSkills():Promise<any> {
+export function getSkills():Promise<Skill[]> {
    return axios.get(`${baseURL}/todos`);
 }
