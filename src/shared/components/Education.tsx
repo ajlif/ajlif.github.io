@@ -1,3 +1,4 @@
+import React from 'react';
 import Skeleton from "@material-ui/lab/Skeleton";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";

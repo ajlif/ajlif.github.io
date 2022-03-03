@@ -1,3 +1,4 @@
+import React from 'react';
 import Skeleton from "@material-ui/lab/Skeleton";
 
 const Skill = (props: any): JSX.Element => { 

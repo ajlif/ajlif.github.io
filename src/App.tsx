@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 const themes = {
   theme: 'light',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setTheme: (theme:string) => {}
 };
 
