@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.599b5b4e.chunk.css",
-    "main.js": "./static/js/main.f2fc7338.chunk.js",
-    "main.js.map": "./static/js/main.f2fc7338.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.99936e5e.js",
-    "runtime-main.js.map": "./static/js/runtime-main.99936e5e.js.map",
+    "main.css": "./static/css/main.496dc3bf.chunk.css",
+    "main.js": "./static/js/main.a40e60a4.chunk.js",
+    "main.js.map": "./static/js/main.a40e60a4.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.2c1b5323.js",
+    "runtime-main.js.map": "./static/js/runtime-main.2c1b5323.js.map",
     "static/css/2.913b6ad9.chunk.css": "./static/css/2.913b6ad9.chunk.css",
-    "static/js/2.eae92ad4.chunk.js": "./static/js/2.eae92ad4.chunk.js",
-    "static/js/2.eae92ad4.chunk.js.map": "./static/js/2.eae92ad4.chunk.js.map",
-    "static/js/3.e873b222.chunk.js": "./static/js/3.e873b222.chunk.js",
-    "static/js/3.e873b222.chunk.js.map": "./static/js/3.e873b222.chunk.js.map",
+    "static/js/2.b3ab5dd1.chunk.js": "./static/js/2.b3ab5dd1.chunk.js",
+    "static/js/2.b3ab5dd1.chunk.js.map": "./static/js/2.b3ab5dd1.chunk.js.map",
+    "static/js/3.925c8c99.chunk.js": "./static/js/3.925c8c99.chunk.js",
+    "static/js/3.925c8c99.chunk.js.map": "./static/js/3.925c8c99.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.913b6ad9.chunk.css.map": "./static/css/2.913b6ad9.chunk.css.map",
-    "static/css/main.599b5b4e.chunk.css.map": "./static/css/main.599b5b4e.chunk.css.map",
-    "static/js/2.eae92ad4.chunk.js.LICENSE.txt": "./static/js/2.eae92ad4.chunk.js.LICENSE.txt",
+    "static/css/main.496dc3bf.chunk.css.map": "./static/css/main.496dc3bf.chunk.css.map",
+    "static/js/2.b3ab5dd1.chunk.js.LICENSE.txt": "./static/js/2.b3ab5dd1.chunk.js.LICENSE.txt",
     "static/media/AlaJlifCv.c2bfbbef.pdf": "./static/media/AlaJlifCv.c2bfbbef.pdf",
     "static/media/ajLogo.92a66ede.png": "./static/media/ajLogo.92a66ede.png",
     "static/media/ajlif.d6433197.jpeg": "./static/media/ajlif.d6433197.jpeg",
@@ -26,10 +26,10 @@
     "static/media/uniprg.f3a17317.jpg": "./static/media/uniprg.f3a17317.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.99936e5e.js",
+    "static/js/runtime-main.2c1b5323.js",
     "static/css/2.913b6ad9.chunk.css",
-    "static/js/2.eae92ad4.chunk.js",
-    "static/css/main.599b5b4e.chunk.css",
-    "static/js/main.f2fc7338.chunk.js"
+    "static/js/2.b3ab5dd1.chunk.js",
+    "static/css/main.496dc3bf.chunk.css",
+    "static/js/main.a40e60a4.chunk.js"
   ]
 }
