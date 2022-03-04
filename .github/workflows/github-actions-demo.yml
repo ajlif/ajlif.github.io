@@ -18,17 +18,11 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-      - name: lint code 
-        run: |
-          npm run lint
       - name: Build
         run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
-  deploy:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
       - name: deploy
-      - run: npm run deploy
-      - run: echo "This job's status is ${{ job.status }} 👏"
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
+        run: |
+          npm run deploy
