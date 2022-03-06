@@ -2,7 +2,7 @@ name: CiCd My website
 on: [push] 
 
 jobs:
-  test:
+  build & deploy:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -23,7 +23,7 @@ jobs:
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
       - name: deploy
-        if: github.ref == 'refs/heads/feat/update-pipeline-master-deploy' && job.status == 'success'
+        if: github.ref == 'refs/heads/feat/master' && job.status == 'success'
         run: |
           git config --global user.name $user_name
           git config --global user.email $user_email
