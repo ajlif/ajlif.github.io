@@ -1,10 +1,14 @@
 import React from 'react';
-import { Project } from "../interfaces/cv.interfaces";
+import { Experience as ExperienceType, Project } from "../interfaces/cv.interfaces";
 import Skeleton from "@material-ui/lab/Skeleton";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
 
-const Experience = (props: any): JSX.Element => {
+interface propsInterface {
+    content: ExperienceType | undefined
+}
+
+const Experience = (props: propsInterface): JSX.Element => {
 
     const {theme  } = useContext(ThemeContext);
     const isLight = theme === 'light';

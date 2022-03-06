@@ -206,10 +206,10 @@ const MyCv = () : JSX.Element => {
                 return <Skill key={index} skill={skillObj}/>
               }):
               <>
-              <Skill undefined/>
-              <Skill undefined/>
-              <Skill undefined/>
-              <Skill undefined/>
+              <Skill skill={undefined}/>
+              <Skill skill={undefined}/>
+              <Skill skill={undefined}/>
+              <Skill skill={undefined}/>
               </>
               }
             </div>

@@ -2,9 +2,13 @@ import React from 'react';
 import Skeleton from "@material-ui/lab/Skeleton";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
+import { Education as EducationType } from '../interfaces/cv.interfaces';
 
+interface propsInterface {
+    content: EducationType | undefined
+}
 
-const Education = (props: any): JSX.Element => {
+const Education = (props: propsInterface): JSX.Element => {
 
     const {theme} = useContext(ThemeContext);
     const isLight = theme === 'light';

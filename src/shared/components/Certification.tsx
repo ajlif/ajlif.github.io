@@ -4,7 +4,11 @@ import { ThemeContext } from '../../App';
 import { Certification as certType } from '../interfaces/cv.interfaces';
 import CertificationSkeleton from './CertificationSkeleton';
 
-const Certification = (props: any): JSX.Element => {
+interface propsInterface {
+    content: certType [] | undefined
+}
+
+const Certification = (props: propsInterface): JSX.Element => {
 
     const { theme } = useContext(ThemeContext);
     const isLight = theme === 'light';
