@@ -2,7 +2,7 @@ name: CiCd My website
 on: [push] 
 
 jobs:
-  build & deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
