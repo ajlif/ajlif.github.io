@@ -1,7 +1,8 @@
-name: GitHub Actions Demo
-on: [push]
+name: CiCd My website
+on: [push] 
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -14,4 +15,22 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Build
+        run: |
+          npm run build
+      - run: echo "This job's status is ${{ job.status }} 🍏"
+      - name: deploy
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
+        env:
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}

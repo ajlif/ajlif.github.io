@@ -1,7 +1,11 @@
 import * as React from 'react';
 import NavMenu from './NavMenu';
 
-const Layout = (props:any): JSX.Element =>  {
+interface AuxProps  { 
+    children: React.ReactNode
+}
+
+const Layout = (props:AuxProps): JSX.Element =>  {
         return (
             <React.Fragment>
                 <NavMenu />
