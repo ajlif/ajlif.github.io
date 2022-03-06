@@ -1,3 +1,4 @@
+import React from 'react';
 import notfound from '../static/notfound.gif';
 
 const NotFoundComponent = (): JSX.Element => {
@@ -7,7 +8,7 @@ const NotFoundComponent = (): JSX.Element => {
             <div>
                 <h1>Oops!</h1>
                 <h1>404 not found</h1>
-                <h2>We can't seem to find the page you're looking for.</h2>
+                <h2>We can not seem to find the page you are looking for.</h2>
                 <h3>Error code: 404 Please use the menu above instead.</h3>
             </div>
             <div>
