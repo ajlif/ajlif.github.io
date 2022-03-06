@@ -34,7 +34,7 @@ const MyCv = () : JSX.Element => {
     };
   }, []);
 
-  const {theme, setTheme} = useContext(ThemeContext);
+  const {theme} = useContext(ThemeContext);
   const isLight = theme === 'light';
 
   useEffect(() => {
@@ -206,10 +206,10 @@ const MyCv = () : JSX.Element => {
                 return <Skill key={index} skill={skillObj}/>
               }):
               <>
-              <Skill undefined/>
-              <Skill undefined/>
-              <Skill undefined/>
-              <Skill undefined/>
+              <Skill skill={undefined}/>
+              <Skill skill={undefined}/>
+              <Skill skill={undefined}/>
+              <Skill skill={undefined}/>
               </>
               }
             </div>

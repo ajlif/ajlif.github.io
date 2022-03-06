@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Collapse, Container, Navbar, NavItem, NavLink } from 'reactstrap';
-import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink as RRNavLink } from 'react-router-dom' ;
 import ajLogo from '../shared/static/ajLogo.png';
 import './NavMenu.scss';
 import FormGroup from '@mui/material/FormGroup';
@@ -12,7 +12,7 @@ const NavMenu = (): JSX.Element => {
 
     const [isOpen, setIsOpen] = useState(false);
     const {theme, setTheme} = useContext(ThemeContext);
-    const [themes, setThemes] = useState(theme);
+    const [themes,] = useState(theme);
 
     const isLight = themes === theme;
 
