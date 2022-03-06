@@ -23,6 +23,8 @@ jobs:
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
       - name: deploy
-        if: github.ref == 'refs/heads/master' && job.status == 'success'
+        if: github.ref == 'refs/heads/feat/update-pipeline-master-deploy' && job.status == 'success'
         run: |
+          git config --global user.name 'ala'
+          git config --global user.email 'alajlif@live.fr'
           npm run deploy
