@@ -127,6 +127,7 @@ const MyCv = () : JSX.Element => {
   }, []);
 
     function scrollUp(): void {
+      console.log('scrollUp - test purpose - to remove ');
       window.scrollTo({
         top: 0,
         left: 0,
