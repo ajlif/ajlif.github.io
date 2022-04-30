@@ -15,14 +15,17 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Install dependencies
+      - name: Install dependencies 🤖
         run: |
           npm install
-      - name: Build
+      - name: lint 🔎
+        run: |
+          npm run lint
+      - name: Build ▶️
         run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
-      - name: deploy
+      - name: deploy 🚀
         if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
           git config --global user.name $user_name

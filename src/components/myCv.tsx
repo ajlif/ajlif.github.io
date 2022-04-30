@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import Experience from "../shared/components/Experience";
-import Education from "../shared/components/Education";
-import Skill from "../shared/components/Skill";
-import Certification from "../shared/components/Certification";
-import ajlif from "../shared/static/ajlif.jpeg";
-import { getExperiences, getProfileInformations, getEducation, getCertifications, getSkills } from "../services/cv.service";
-import Skeleton from "@material-ui/lab/Skeleton";
-import alten from "../shared/static/alten.png";
-import bgiTunis from "../shared/static/bgiTunis.jpg";
-import otConsulting from "../shared/static/otConsulting.jpeg";
-import unimore from "../shared/static/unimore.jpg";
-import britsh from "../shared/static/britsh.png";
-import institutfr from "../shared/static/institutfr.png";
-import uniprg from "../shared/static/uniprg.jpg";
-import fsb from "../shared/static/fsb.png";
-import AlaJlifCv from "../shared/static/AlaJlifCv.pdf";
-import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType} from "../shared/interfaces/cv.interfaces";
+import { useState, useEffect, useRef, useContext } from 'react';
+import Experience from '../shared/components/Experience';
+import Education from '../shared/components/Education';
+import Skill from '../shared/components/Skill';
+import Certification from '../shared/components/Certification';
+import ajlif from '../shared/static/ajlif.jpeg';
+import { getExperiences, getProfileInformations, getEducation, getCertifications, getSkills } from '../services/cv.service';
+import Skeleton from '@material-ui/lab/Skeleton';
+import alten from '../shared/static/alten.png';
+import bgiTunis from '../shared/static/bgiTunis.jpg';
+import otConsulting from '../shared/static/otConsulting.jpeg';
+import unimore from '../shared/static/unimore.jpg';
+import britsh from '../shared/static/britsh.png';
+import institutfr from '../shared/static/institutfr.png';
+import uniprg from '../shared/static/uniprg.jpg';
+import fsb from '../shared/static/fsb.png';
+import AlaJlifCv from '../shared/static/AlaJlifCv.pdf';
+import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { ThemeContext } from '../App';
 
-const MyCv = () : JSX.Element => {
+const MyCv = (): JSX.Element => {
   const [presentations, setPresentations] = useState('');
   const [experiences, setExperiences] = useState<ExperienceType[]>([]);
   const [educations, setEducations] = useState<EducationType[]>([]);
@@ -27,14 +27,14 @@ const MyCv = () : JSX.Element => {
   const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
 
-  useEffect(() => {
+  useEffect(()      => {
     mounted.current = true;
     return () => {
-      mounted.current = false;
+      mounted.current =          false;
     };
   }, []);
 
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const isLight = theme === 'light';
 
   useEffect(() => {
@@ -43,15 +43,15 @@ const MyCv = () : JSX.Element => {
         mounted.current && setPresentations(response);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }, []);
-  
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    }
+    };
   }, []);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const MyCv = () : JSX.Element => {
         });
         mounted.current && setExperiences(response);
       }).catch((error) => {
-        console.log(error);
+        console.error(error);
       }).finally(() => {
         //remove loading
       });
@@ -92,8 +92,8 @@ const MyCv = () : JSX.Element => {
         });
         mounted.current && setEducations(response);
       }).catch((error) => {
-        console.log(error);
-      })
+        console.error(error);
+      });
   }, []);
 
   useEffect(() => {
@@ -113,8 +113,8 @@ const MyCv = () : JSX.Element => {
         });
         mounted.current && setCertifications(response);
       }).catch((error) => {
-        console.log(error);
-      })
+        console.error(error);
+      });
   }, []);
 
   useEffect(() => {
@@ -122,29 +122,28 @@ const MyCv = () : JSX.Element => {
       .then((response: skillType[]) => {
         mounted.current && setSkills(response || []);
       }).catch((error) => {
-        console.log(error);
-      })
+        console.error(error);
+      });
   }, []);
 
-    function scrollUp(): void {
-      console.log('scrollUp - test purpose - to remove ');
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
+  function scrollUp(): void {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
-    function handleScroll(): void {
-      setshowScrollUp(window.scrollY > 20);
-    }
+  function handleScroll(): void {
+    setshowScrollUp(window.scrollY > 20);
+  }
 
   return (
-    <div className={isLight ? '': 'header-dark'}>
+    <div className={isLight ? '' : 'header-dark'}>
       <div className="header-cv">
         <img className="presentation-picture" src={ajlif} alt="stackTech" />
         <div className="presentation-card">
-          <h4 className={isLight ? '': 'title-dark'}>
+          <h4 className={isLight ? '' : 'title-dark'}>
             {presentations ? (
               presentations
             ) : (
@@ -162,10 +161,10 @@ const MyCv = () : JSX.Element => {
         <div className="flex-container">
 
           <div className="flex-item-left">
-            <h2 className={isLight ? '': 'title-dark'}>Experience</h2>
+            <h2 className={isLight ? '' : 'title-dark'}>Experience</h2>
             {experiences && experiences.length ? (
-              experiences.map(function (object: ExperienceType, i:number) {
-                return <div key={i}> <Experience content={object} /> </div>
+              experiences.map((object: ExperienceType, i: number) => {
+                return <div key={i}> <Experience content={object} /> </div>;
               })
             ) : (
               <>
@@ -176,42 +175,42 @@ const MyCv = () : JSX.Element => {
           </div>
 
           <div className="flex-item-right">
-            <h2 className={isLight ? '': 'title-dark'}>Education</h2>
-            {educations && educations.length ?(
+            <h2 className={isLight ? '' : 'title-dark'}>Education</h2>
+            {educations && educations.length ? (
               educations.map((educationObj: EducationType, i: number) => {
                 return <div key={i}>
-                    <Education content={educationObj}/>
-                </div>
+                  <Education content={educationObj} />
+                </div>;
               })
-            ):(
+            ) : (
               <>
-              <Education content={undefined}/>
-              <Education content={undefined}/>
+                <Education content={undefined} />
+                <Education content={undefined} />
               </>
             )}
 
-            <h2 className={isLight ? '': 'title-dark'}>Licenses and certifications</h2>
-            {certifications && certifications.length ?(
+            <h2 className={isLight ? '' : 'title-dark'}>Licenses and certifications</h2>
+            {certifications && certifications.length ? (
               <>
-                <Certification content={certifications}/>
+                <Certification content={certifications} />
               </>
-            ):(
+            ) : (
               <>
-              <Certification content={undefined}/>
+                <Certification content={undefined} />
               </>
             )}
 
-            <h2 className={isLight ? '': 'title-dark'}>Skills and endorsements</h2>
+            <h2 className={isLight ? '' : 'title-dark'}>Skills and endorsements</h2>
             <div className="skill-container">
-              {skills && skills.length ? skills.map((skillObj: skillType,index: number) => {
-                return <Skill key={index} skill={skillObj}/>
-              }):
-              <>
-              <Skill skill={undefined}/>
-              <Skill skill={undefined}/>
-              <Skill skill={undefined}/>
-              <Skill skill={undefined}/>
-              </>
+              {skills && skills.length ? skills.map((skillObj: skillType, index: number) => {
+                return <Skill key={index} skill={skillObj} />;
+              }) :
+                <>
+                  <Skill skill={undefined} />
+                  <Skill skill={undefined} />
+                  <Skill skill={undefined} />
+                  <Skill skill={undefined} />
+                </>
               }
             </div>
           </div>

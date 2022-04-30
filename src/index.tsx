@@ -1,9 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import './index.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import "bootstrap-icons/font/bootstrap-icons.css";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
 
