@@ -28,7 +28,7 @@ export const App = (): JSX.Element => {
       </Layout>
     </ThemeContext.Provider>
   );
-}
+};
 
 
 const themes = {

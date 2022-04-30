@@ -6,14 +6,14 @@ interface AuxProps  {
 }
 
 const Layout = (props:AuxProps): JSX.Element =>  {
-        return (
-            <React.Fragment>
-                <NavMenu />
-                <div>
-                    {props.children}
-                </div>
-            </React.Fragment>
-        );
-}
+  return (
+    <React.Fragment>
+      <NavMenu />
+      <div>
+        {props.children}
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default Layout;
