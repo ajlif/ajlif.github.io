@@ -16,10 +16,10 @@ const MyCv = (): JSX.Element => {
   const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
 
-  useEffect(() => {
+  useEffect(()      => {
     mounted.current = true;
     return () => {
-      mounted.current = false;
+      mounted.current =          false;
     };
   }, []);
 
