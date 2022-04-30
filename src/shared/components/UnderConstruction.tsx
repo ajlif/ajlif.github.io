@@ -1,4 +1,3 @@
-import React from 'react';
 import underconstruction from '../static/underconstruction.png';
 
 const UnderConstruction = (): JSX.Element => {

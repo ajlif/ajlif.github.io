@@ -1,4 +1,3 @@
-import React from 'react';
 import notfound from '../static/notfound.gif';
 
 const NotFoundComponent = (): JSX.Element => {

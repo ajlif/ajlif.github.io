@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import Experience from "../shared/components/Experience";
 import Education from "../shared/components/Education";
 import Skill from "../shared/components/Skill";
@@ -27,10 +27,10 @@ const MyCv = () : JSX.Element => {
   const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
 
-  useEffect(() => {
+  useEffect(()      => {
     mounted.current = true;
     return () => {
-      mounted.current = false;
+      mounted.current =          false;
     };
   }, []);
 

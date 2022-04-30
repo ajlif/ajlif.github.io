@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 import { Certification as certType } from '../interfaces/cv.interfaces';
