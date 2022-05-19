@@ -3,23 +3,24 @@ import Experience from '../shared/components/Experience';
 import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
 import Certification from '../shared/components/Certification';
-import ajlif from '../shared/static/ajlif.jpeg';
-import { getExperiences, getProfileInformations, getEducation, getCertifications, getSkills } from '../services/cv.service';
+import ajlif from '../shared/images/ajlif.jpeg';
+import { getExperiences, getEducation, getCertifications, getSkills } from '../services/cv.service';
 import Skeleton from '@material-ui/lab/Skeleton';
-import alten from '../shared/static/alten.png';
-import bgiTunis from '../shared/static/bgiTunis.jpg';
-import otConsulting from '../shared/static/otConsulting.jpeg';
-import unimore from '../shared/static/unimore.jpg';
-import britsh from '../shared/static/britsh.png';
-import institutfr from '../shared/static/institutfr.png';
-import uniprg from '../shared/static/uniprg.jpg';
-import fsb from '../shared/static/fsb.png';
-import AlaJlifCv from '../shared/static/AlaJlifCv.pdf';
+import alten from '../shared/images/alten.png';
+import bgiTunis from '../shared/images/bgiTunis.jpg';
+import otConsulting from '../shared/images/otConsulting.jpeg';
+import unimore from '../shared/images/unimore.jpg';
+import britsh from '../shared/images/britsh.png';
+import institutfr from '../shared/images/institutfr.png';
+import uniprg from '../shared/images/uniprg.jpg';
+import fsb from '../shared/images/fsb.png';
+import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
 import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { ThemeContext } from '../App';
+import { useAppSelector } from '../store/setup/hooks';
+import { selectProfileInf } from '../store/slices/serviceSlice';
 
 const MyCv = (): JSX.Element => {
-  const [presentations, setPresentations] = useState('');
   const [experiences, setExperiences] = useState<ExperienceType[]>([]);
   const [educations, setEducations] = useState<EducationType[]>([]);
   const [certifications, setCertifications] = useState<CertificationType[]>([]);
@@ -27,25 +28,17 @@ const MyCv = (): JSX.Element => {
   const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
 
-  useEffect(()      => {
+  useEffect(() => {
     mounted.current = true;
     return () => {
-      mounted.current =          false;
+      mounted.current = false;
     };
   }, []);
 
   const { theme } = useContext(ThemeContext);
   const isLight = theme === 'light';
 
-  useEffect(() => {
-    getProfileInformations()
-      .then((response: string) => {
-        mounted.current && setPresentations(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  const info = useAppSelector(selectProfileInf);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -144,8 +137,8 @@ const MyCv = (): JSX.Element => {
         <img className="presentation-picture" src={ajlif} alt="stackTech" />
         <div className="presentation-card">
           <h4 className={isLight ? '' : 'title-dark'}>
-            {presentations ? (
-              presentations
+            {info.content ? (
+              info.content
             ) : (
               <>
                 <Skeleton variant="text" />
