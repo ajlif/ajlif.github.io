@@ -7,7 +7,8 @@ import NotFoundComponent from './shared/components/NotFoundComponent';
 import UnderConstruction from './shared/components/UnderConstruction';
 import { useState } from 'react';
 import { useAppDispatch } from './store/setup/hooks';
-import { getProfileInfo } from './store/slices/serviceSlice';
+import { getProfileInfo } from './store/slices/profileSlice';
+import { getExperiences } from './store/slices/experiencesSlice';
 
 
 export const App = (): JSX.Element => {
@@ -18,6 +19,7 @@ export const App = (): JSX.Element => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getProfileInfo());
+    dispatch(getExperiences());
   }, []);
 
   return (

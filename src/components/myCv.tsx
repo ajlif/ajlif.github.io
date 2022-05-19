@@ -4,11 +4,8 @@ import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
 import Certification from '../shared/components/Certification';
 import ajlif from '../shared/images/ajlif.jpeg';
-import { getExperiences, getEducation, getCertifications, getSkills } from '../services/cv.service';
+import { getEducation, getCertifications, getSkills } from '../services/cv.service';
 import Skeleton from '@material-ui/lab/Skeleton';
-import alten from '../shared/images/alten.png';
-import bgiTunis from '../shared/images/bgiTunis.jpg';
-import otConsulting from '../shared/images/otConsulting.jpeg';
 import unimore from '../shared/images/unimore.jpg';
 import britsh from '../shared/images/britsh.png';
 import institutfr from '../shared/images/institutfr.png';
@@ -18,10 +15,10 @@ import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
 import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { ThemeContext } from '../App';
 import { useAppSelector } from '../store/setup/hooks';
-import { selectProfileInf } from '../store/slices/serviceSlice';
+import { selectProfileInf } from '../store/slices/profileSlice';
+import { selectExperiences } from '../store/slices/experiencesSlice';
 
 const MyCv = (): JSX.Element => {
-  const [experiences, setExperiences] = useState<ExperienceType[]>([]);
   const [educations, setEducations] = useState<EducationType[]>([]);
   const [certifications, setCertifications] = useState<CertificationType[]>([]);
   const [skills, setSkills] = useState<skillType[]>([]);
@@ -39,35 +36,13 @@ const MyCv = (): JSX.Element => {
   const isLight = theme === 'light';
 
   const info = useAppSelector(selectProfileInf);
+  const experiences = useAppSelector(selectExperiences);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    getExperiences()
-      .then((response: ExperienceType[]) => {
-        response.map((experience: ExperienceType) => {
-          switch (true) {
-            case experience?.company?.toLowerCase().includes('alten'):
-              return (experience.companyLogo = alten);
-            case experience?.company?.toLowerCase().includes('bgi'):
-              return (experience.companyLogo = bgiTunis);
-            case experience?.company?.toLowerCase().includes('ot'):
-              return (experience.companyLogo = otConsulting);
-            default:
-              return '';
-          }
-        });
-        mounted.current && setExperiences(response);
-      }).catch((error) => {
-        console.error(error);
-      }).finally(() => {
-        //remove loading
-      });
   }, []);
 
   useEffect(() => {
@@ -155,8 +130,8 @@ const MyCv = (): JSX.Element => {
 
           <div className="flex-item-left">
             <h2 className={isLight ? '' : 'title-dark'}>Experience</h2>
-            {experiences && experiences.length ? (
-              experiences.map((object: ExperienceType, i: number) => {
+            {experiences?.content.length ? (
+              experiences.content.map((object: ExperienceType, i: number) => {
                 return <div key={i}> <Experience content={object} /> </div>;
               })
             ) : (
