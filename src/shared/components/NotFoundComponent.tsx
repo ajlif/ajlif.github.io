@@ -1,4 +1,4 @@
-import notfound from '../static/notfound.gif';
+import notfound from '../images/notfound.gif';
 
 const NotFoundComponent = (): JSX.Element => {
 

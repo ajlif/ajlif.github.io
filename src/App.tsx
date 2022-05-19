@@ -1,17 +1,24 @@
-import * as React from 'react';
-import './App.scss';
+import {useEffect, createContext} from 'react';
+import './styles/App.scss';
 import { Route, Switch } from 'react-router';
 import Layout from './components/Layout';
 import MyCv from './components/myCv';
 import NotFoundComponent from './shared/components/NotFoundComponent';
 import UnderConstruction from './shared/components/UnderConstruction';
 import { useState } from 'react';
+import { useAppDispatch } from './store/setup/hooks';
+import { getProfileInfo } from './store/slices/serviceSlice';
 
 
 export const App = (): JSX.Element => {
 
   const [theme, setTheme] = useState('light');
   const value = { theme, setTheme };
+
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getProfileInfo());
+  }, []);
 
   return (
     <ThemeContext.Provider value={value}>
@@ -38,4 +45,4 @@ const themes = {
     // update theme
   }
 };
-export const ThemeContext = React.createContext(themes);
+export const ThemeContext = createContext(themes);
