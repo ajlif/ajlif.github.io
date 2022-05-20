@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { useAppDispatch } from './store/setup/hooks';
 import { getProfileInfo } from './store/slices/profileSlice';
 import { getExperiences } from './store/slices/experiencesSlice';
+import { getEducations } from './store/slices/educationsSlice';
 
 
 export const App = (): JSX.Element => {
@@ -20,6 +21,7 @@ export const App = (): JSX.Element => {
   useEffect(() => {
     dispatch(getProfileInfo());
     dispatch(getExperiences());
+    dispatch(getEducations());
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-import { Experience } from './cv.interfaces';
+import { Education, Experience } from './cv.interfaces';
 
 export interface ProfilePresentation {
     content: string;
@@ -7,5 +7,10 @@ export interface ProfilePresentation {
 
 export interface ExperiencesState {
     content: Experience[];
+    status: '' | 'fulfilled' | 'loading' |'failed';
+}
+
+export interface EducationState {
+    content: Education[];
     status: '' | 'fulfilled' | 'loading' |'failed';
 }
