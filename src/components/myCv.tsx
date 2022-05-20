@@ -4,7 +4,6 @@ import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
 import Certification from '../shared/components/Certification';
 import ajlif from '../shared/images/ajlif.jpeg';
-import { getSkills } from '../services/cv.service';
 import Skeleton from '@material-ui/lab/Skeleton';
 import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
 import { Education as EducationType, Experience as ExperienceType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
@@ -14,9 +13,10 @@ import { selectProfileInf } from '../store/slices/profileSlice';
 import { selectExperiences } from '../store/slices/experiencesSlice';
 import { selectEducations } from '../store/slices/educationsSlice';
 import { selectCertifications } from '../store/slices/certificationsSlice';
+import { selectSkills } from '../store/slices/skillsSlice';
 
 const MyCv = (): JSX.Element => {
-  const [skills, setSkills] = useState<skillType[]>([]);
+
   const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
 
@@ -34,21 +34,13 @@ const MyCv = (): JSX.Element => {
   const experiences = useAppSelector(selectExperiences);
   const educations = useAppSelector(selectEducations);
   const certifications = useAppSelector(selectCertifications);
+  const skills = useAppSelector(selectSkills);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    getSkills()
-      .then((response: skillType[]) => {
-        mounted.current && setSkills(response || []);
-      }).catch((error) => {
-        console.error(error);
-      });
   }, []);
 
   function scrollUp(): void {
@@ -127,7 +119,7 @@ const MyCv = (): JSX.Element => {
 
             <h2 className={isLight ? '' : 'title-dark'}>Skills and endorsements</h2>
             <div className="skill-container">
-              {skills && skills.length ? skills.map((skillObj: skillType, index: number) => {
+              {skills.content.length ? skills.content.map((skillObj: skillType, index: number) => {
                 return <Skill key={index} skill={skillObj} />;
               }) :
                 <>
