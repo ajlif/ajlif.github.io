@@ -1,4 +1,4 @@
-import underconstruction from '../static/underconstruction.png';
+import underconstruction from '../images/underconstruction.png';
 
 const UnderConstruction = (): JSX.Element => {
 

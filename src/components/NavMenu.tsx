@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import { Collapse, Container, Navbar, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom' ;
-import ajLogo from '../shared/static/ajLogo.png';
-import './NavMenu.scss';
+import ajLogo from '../shared/images/ajLogo.png';
+import '../styles/NavMenu.scss';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MaterialUISwitch from '../shared/components/MaterialUISwitch';
