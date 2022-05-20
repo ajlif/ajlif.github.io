@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import  profInformations from '../slices/profileSlice';
 import  experiences from '../slices/experiencesSlice';
+import  educations from '../slices/educationsSlice';
 
 export const store = configureStore({
   reducer: {
     personalInfo: profInformations,
-    experiences 
+    experiences,
+    educations
   },
 });
 

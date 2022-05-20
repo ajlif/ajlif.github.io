@@ -4,22 +4,20 @@ import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
 import Certification from '../shared/components/Certification';
 import ajlif from '../shared/images/ajlif.jpeg';
-import { getEducation, getCertifications, getSkills } from '../services/cv.service';
+import { getCertifications, getSkills } from '../services/cv.service';
 import Skeleton from '@material-ui/lab/Skeleton';
-import unimore from '../shared/images/unimore.jpg';
 import britsh from '../shared/images/britsh.png';
 import institutfr from '../shared/images/institutfr.png';
 import uniprg from '../shared/images/uniprg.jpg';
-import fsb from '../shared/images/fsb.png';
 import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
 import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { ThemeContext } from '../App';
 import { useAppSelector } from '../store/setup/hooks';
 import { selectProfileInf } from '../store/slices/profileSlice';
 import { selectExperiences } from '../store/slices/experiencesSlice';
+import { selectEducations } from '../store/slices/educationsSlice';
 
 const MyCv = (): JSX.Element => {
-  const [educations, setEducations] = useState<EducationType[]>([]);
   const [certifications, setCertifications] = useState<CertificationType[]>([]);
   const [skills, setSkills] = useState<skillType[]>([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
@@ -37,31 +35,13 @@ const MyCv = (): JSX.Element => {
 
   const info = useAppSelector(selectProfileInf);
   const experiences = useAppSelector(selectExperiences);
+  const educations = useAppSelector(selectEducations);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    getEducation()
-      .then((response: EducationType[]) => {
-        response.map((education: EducationType) => {
-          switch (true) {
-            case education?.university?.toLowerCase().includes('modena'):
-              return (education.uniLogo = unimore);
-            case education?.university?.toLowerCase().includes('bizerte'):
-              return (education.uniLogo = fsb);
-            default:
-              return '';
-          }
-        });
-        mounted.current && setEducations(response);
-      }).catch((error) => {
-        console.error(error);
-      });
   }, []);
 
   useEffect(() => {
@@ -144,8 +124,8 @@ const MyCv = (): JSX.Element => {
 
           <div className="flex-item-right">
             <h2 className={isLight ? '' : 'title-dark'}>Education</h2>
-            {educations && educations.length ? (
-              educations.map((educationObj: EducationType, i: number) => {
+            {educations?.content.length ? (
+              educations.content.map((educationObj: EducationType, i: number) => {
                 return <div key={i}>
                   <Education content={educationObj} />
                 </div>;
