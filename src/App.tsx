@@ -11,6 +11,7 @@ import { getProfileInfo } from './store/slices/profileSlice';
 import { getExperiences } from './store/slices/experiencesSlice';
 import { getEducations } from './store/slices/educationsSlice';
 import { getCertifications } from './store/slices/certificationsSlice';
+import { getSkills } from './store/slices/skillsSlice';
 
 
 export const App = (): JSX.Element => {
@@ -24,6 +25,7 @@ export const App = (): JSX.Element => {
     dispatch(getExperiences());
     dispatch(getEducations());
     dispatch(getCertifications());
+    dispatch(getSkills());
   }, []);
 
   return (

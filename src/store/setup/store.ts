@@ -3,13 +3,15 @@ import  profInformations from '../slices/profileSlice';
 import  experiences from '../slices/experiencesSlice';
 import  educations from '../slices/educationsSlice';
 import  certifications from '../slices/certificationsSlice';
+import  skills from '../slices/skillsSlice';
 
 export const store = configureStore({
   reducer: {
     personalInfo: profInformations,
     experiences,
     educations,
-    certifications
+    certifications,
+    skills
   },
 });
 
