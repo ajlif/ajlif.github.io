@@ -1,6 +1,6 @@
 # My website
 
-> My website app built with React.ts, React Hooks, Routers and ❤️. it will contain some web pages about me, the projects i'am working on and tips about FE dev.
+> My website app built with React.ts, React Hooks, Routers, redux, redux-toolkit and ❤️. it will contain some web pages about me, the projects i'am working on and tips about FE dev.
 
 ## Built With
 
