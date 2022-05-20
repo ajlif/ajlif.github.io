@@ -4,21 +4,18 @@ import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
 import Certification from '../shared/components/Certification';
 import ajlif from '../shared/images/ajlif.jpeg';
-import { getCertifications, getSkills } from '../services/cv.service';
+import { getSkills } from '../services/cv.service';
 import Skeleton from '@material-ui/lab/Skeleton';
-import britsh from '../shared/images/britsh.png';
-import institutfr from '../shared/images/institutfr.png';
-import uniprg from '../shared/images/uniprg.jpg';
 import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
-import { Education as EducationType, Experience as ExperienceType, Certification as CertificationType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
+import { Education as EducationType, Experience as ExperienceType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { ThemeContext } from '../App';
 import { useAppSelector } from '../store/setup/hooks';
 import { selectProfileInf } from '../store/slices/profileSlice';
 import { selectExperiences } from '../store/slices/experiencesSlice';
 import { selectEducations } from '../store/slices/educationsSlice';
+import { selectCertifications } from '../store/slices/certificationsSlice';
 
 const MyCv = (): JSX.Element => {
-  const [certifications, setCertifications] = useState<CertificationType[]>([]);
   const [skills, setSkills] = useState<skillType[]>([]);
   const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
@@ -36,33 +33,13 @@ const MyCv = (): JSX.Element => {
   const info = useAppSelector(selectProfileInf);
   const experiences = useAppSelector(selectExperiences);
   const educations = useAppSelector(selectEducations);
+  const certifications = useAppSelector(selectCertifications);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    getCertifications()
-      .then((response: CertificationType[]) => {
-        response.map((certif: CertificationType) => {
-          switch (true) {
-            case certif?.name?.toLowerCase().includes('ielts'):
-              return (certif.organizationLogo = britsh);
-            case certif?.name?.toLowerCase().includes('tcf'):
-              return (certif.organizationLogo = institutfr);
-            case certif?.name?.toLowerCase().includes('celi'):
-              return (certif.organizationLogo = uniprg);
-            default:
-              return '';
-          }
-        });
-        mounted.current && setCertifications(response);
-      }).catch((error) => {
-        console.error(error);
-      });
   }, []);
 
   useEffect(() => {
@@ -138,9 +115,9 @@ const MyCv = (): JSX.Element => {
             )}
 
             <h2 className={isLight ? '' : 'title-dark'}>Licenses and certifications</h2>
-            {certifications && certifications.length ? (
+            {certifications?.content.length ? (
               <>
-                <Certification content={certifications} />
+                <Certification content={certifications.content} />
               </>
             ) : (
               <>
