@@ -9,11 +9,7 @@ import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
 import { Education as EducationType, Experience as ExperienceType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { ThemeContext } from '../App';
 import { useAppSelector } from '../store/setup/hooks';
-import { selectProfileInf } from '../store/slices/profileSlice';
-import { selectExperiences } from '../store/slices/experiencesSlice';
-import { selectEducations } from '../store/slices/educationsSlice';
-import { selectCertifications } from '../store/slices/certificationsSlice';
-import { selectSkills } from '../store/slices/skillsSlice';
+import { selectProfileInf, selectExperiences, selectEducations, selectCertifications, selectSkills  } from '../store/selectors/cv.selectors';
 
 const MyCv = (): JSX.Element => {
 

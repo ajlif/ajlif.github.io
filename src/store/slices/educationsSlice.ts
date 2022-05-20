@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../setup/store';
 import {getEducation as getEducationsService} from '../../services/cv.service';
 import { EducationState } from '../../shared/interfaces/states.interface';
 import unimore from '../../shared/images/unimore.jpg';
@@ -51,5 +50,3 @@ export const getEducationsSlice = createSlice({
 });
 
 export default getEducationsSlice.reducer;
-
-export const selectEducations = (state: RootState): EducationState => state.educations ;

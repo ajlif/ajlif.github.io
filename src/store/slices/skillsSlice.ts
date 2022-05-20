@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../setup/store';
 import {getSkills as getSkillsService} from '../../services/cv.service';
 import { skillsState } from '../../shared/interfaces/states.interface';
 
@@ -37,5 +36,3 @@ export const getSkillsSlice = createSlice({
 });
 
 export default getSkillsSlice.reducer;
-
-export const selectSkills = (state: RootState): skillsState => state.skills ;
