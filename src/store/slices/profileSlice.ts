@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../setup/store';
 import {getProfileInformations} from '../../services/cv.service';
 import { ProfilePresentation } from '../../shared/interfaces/states.interface';
 
@@ -37,5 +36,3 @@ export const profInformationsSlice = createSlice({
 });
 
 export default profInformationsSlice.reducer;
-
-export const selectProfileInf = (state: RootState): ProfilePresentation => state.personalInfo ;

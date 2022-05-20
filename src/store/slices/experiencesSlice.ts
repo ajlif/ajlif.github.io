@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../setup/store';
 import {getExperiences as getExperiencesService} from '../../services/cv.service';
 import { ExperiencesState } from '../../shared/interfaces/states.interface';
 import alten from '../../shared/images/alten.png';
@@ -54,5 +53,3 @@ export const getExperiencesSlice = createSlice({
 });
 
 export default getExperiencesSlice.reducer;
-
-export const selectExperiences = (state: RootState): ExperiencesState => state.experiences ;

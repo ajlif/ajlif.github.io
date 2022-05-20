@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../setup/store';
 import {getCertifications as getCertificationsService} from '../../services/cv.service';
 import { CertificationsState } from '../../shared/interfaces/states.interface';
 import { Certification as CertificationType} from '../../shared/interfaces/cv.interfaces';
@@ -54,5 +53,3 @@ export const getCertificationsSlice = createSlice({
 });
 
 export default getCertificationsSlice.reducer;
-
-export const selectCertifications = (state: RootState): CertificationsState => state.certifications ;
