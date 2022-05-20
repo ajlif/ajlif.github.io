@@ -10,6 +10,7 @@ import { useAppDispatch } from './store/setup/hooks';
 import { getProfileInfo } from './store/slices/profileSlice';
 import { getExperiences } from './store/slices/experiencesSlice';
 import { getEducations } from './store/slices/educationsSlice';
+import { getCertifications } from './store/slices/certificationsSlice';
 
 
 export const App = (): JSX.Element => {
@@ -22,6 +23,7 @@ export const App = (): JSX.Element => {
     dispatch(getProfileInfo());
     dispatch(getExperiences());
     dispatch(getEducations());
+    dispatch(getCertifications());
   }, []);
 
   return (
