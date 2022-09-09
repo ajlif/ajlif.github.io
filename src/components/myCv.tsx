@@ -150,9 +150,6 @@ const MyCv = (): JSX.Element => {
         <a href="https://github.com/ajlif">
           <i className="bi bi-github social-footer"></i>
         </a>
-        <a href="https://www.linkedin.com/in/ala-jlif">
-          <i className="bi bi-linkedin social-footer"></i>
-        </a>
         <a href="https://twitter.com/ala_j">
           <i className="bi bi-twitter social-footer"></i>
         </a>
