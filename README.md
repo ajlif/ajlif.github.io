@@ -7,6 +7,7 @@
 ## Built With
 
 - [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
 - [SCSS](https://sass-lang.com/)
 - [Axios](https://axios-http.com/)
 - [Webpack](https://webpack.js.org/)
