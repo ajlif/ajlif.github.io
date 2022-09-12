@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [0.4.2](https://github.com/ajlif/ajlif.github.io/compare/v0.4.1...0.4.2)
+#### [v0.4.2](https://github.com/ajlif/ajlif.github.io/compare/v0.4.1...v0.4.2)
 
 > 8 September 2022
 
