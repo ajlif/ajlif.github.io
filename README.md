@@ -1,3 +1,5 @@
+![ci job](https://github.com/ajlif/ajlif.github.io/actions/workflows/github-actions-demo.yml/badge.svg)
+
 # My website
 
 > My website app built with React.ts, React Hooks, Routers, redux, redux-toolkit and ❤️. it will contain some web pages about me, the projects i'am working on and tips about FE dev.
@@ -5,13 +7,14 @@
 ## Built With
 
 - [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
 - [SCSS](https://sass-lang.com/)
 - [Axios](https://axios-http.com/)
 - [Webpack](https://webpack.js.org/)
 
 ## Live Demo
 
-> will be available soon.
+[ajlif.github.io](https://ajlif.github.io/)
 
 ## Available Scripts
 
