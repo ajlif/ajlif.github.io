@@ -46,3 +46,9 @@ export interface Skill {
      */
     name: string;
 }
+
+
+export enum themes {
+    LIGHT = 'light',
+    DARK =  'dark'
+}

@@ -4,6 +4,7 @@ import  experiences from '../slices/experiencesSlice';
 import  educations from '../slices/educationsSlice';
 import  certifications from '../slices/certificationsSlice';
 import  skills from '../slices/skillsSlice';
+import theme from '../slices/themeSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     experiences,
     educations,
     certifications,
-    skills
+    skills,
+    theme
   },
 });
 
