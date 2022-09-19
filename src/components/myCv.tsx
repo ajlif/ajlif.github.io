@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useEffect, useRef} from 'react';
 import Experience from '../shared/components/Experience';
 import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
@@ -7,9 +7,10 @@ import ajlif from '../shared/images/ajlif.jpeg';
 import Skeleton from '@material-ui/lab/Skeleton';
 import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
 import { Education as EducationType, Experience as ExperienceType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
-import { ThemeContext } from '../App';
 import { useAppSelector } from '../store/setup/hooks';
 import { selectProfileInf, selectExperiences, selectEducations, selectCertifications, selectSkills  } from '../store/selectors/cv.selectors';
+import { selectTheme } from '../store/selectors/global.selectors';
+import { themes } from '../shared/interfaces/cv.interfaces';
 
 const MyCv = (): JSX.Element => {
 
@@ -23,14 +24,14 @@ const MyCv = (): JSX.Element => {
     };
   }, []);
 
-  const { theme } = useContext(ThemeContext);
-  const isLight = theme === 'light';
-
   const info = useAppSelector(selectProfileInf);
   const experiences = useAppSelector(selectExperiences);
   const educations = useAppSelector(selectEducations);
   const certifications = useAppSelector(selectCertifications);
   const skills = useAppSelector(selectSkills);
+  const theme = useAppSelector(selectTheme);
+
+  const isLight = theme.theme === themes.LIGHT;
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

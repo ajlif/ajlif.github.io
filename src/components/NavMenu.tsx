@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Collapse, Container, Navbar, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom' ;
 import ajLogo from '../shared/images/ajLogo.png';
@@ -6,15 +6,19 @@ import '../styles/NavMenu.scss';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MaterialUISwitch from '../shared/components/MaterialUISwitch';
-import { ThemeContext } from '../App';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../store/setup/hooks';
+import { selectTheme } from '../store/selectors/global.selectors';
+import { setTheme } from '../store/slices/themeSlice';
+import { themes } from '../shared/interfaces/cv.interfaces';
 
 const NavMenu = (): JSX.Element => {
 
   const [isOpen, setIsOpen] = useState(false);
-  const {theme, setTheme} = useContext(ThemeContext);
-  const [themes,] = useState(theme);
 
-  const isLight = themes === theme;
+  const dispatch = useDispatch();
+  const theme = useAppSelector(selectTheme);
+  const isLight = theme.theme === themes.LIGHT;
 
   return (
     <header className={isLight? '':'header-dark'}>
@@ -27,8 +31,8 @@ const NavMenu = (): JSX.Element => {
             <FormControlLabel
               control={<MaterialUISwitch />}
               label=""
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              checked={theme === 'dark'}
+              onClick={() => dispatch(setTheme())}
+              checked={!isLight}
             />
           </FormGroup>
           <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
