@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [v0.4.2](https://github.com/ajlif/ajlif.github.io/compare/v0.4.1...v0.4.2)
+#### [0.4.3](https://github.com/ajlif/ajlif.github.io/compare/0.4.2...0.4.3)
+
+> 19 September 2022
+
+- fix: add theme to redux store [`#38`](https://github.com/ajlif/ajlif.github.io/pull/38)
+- feat: add changeLog [`#37`](https://github.com/ajlif/ajlif.github.io/pull/37)
+- fix: remove vscode folder [`#34`](https://github.com/ajlif/ajlif.github.io/pull/34)
+- feat: Add-.vscode-to-gitignore [`#32`](https://github.com/ajlif/ajlif.github.io/pull/32)
+- feat: update readMe [`#21`](https://github.com/ajlif/ajlif.github.io/pull/21)
+- chore: update sitemap [`#22`](https://github.com/ajlif/ajlif.github.io/pull/22)
+- fix: remove lk link [`#19`](https://github.com/ajlif/ajlif.github.io/pull/19)
+- feat: Add data mocks | Update experiences [`#12`](https://github.com/ajlif/ajlif.github.io/pull/12)
+- fix:test pipeline on master deploy [`#10`](https://github.com/ajlif/ajlif.github.io/pull/10)
+
+#### [0.4.2](https://github.com/ajlif/ajlif.github.io/compare/v0.4.1...0.4.2)
 
 > 8 September 2022
 
