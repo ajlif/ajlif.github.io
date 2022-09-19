@@ -1,7 +1,8 @@
 import { Experience as ExperienceType, Project } from '../interfaces/cv.interfaces';
 import Skeleton from '@material-ui/lab/Skeleton';
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
+import { selectTheme } from '../../store/selectors/global.selectors';
+import { useAppSelector } from '../../store/setup/hooks';
+import { themes } from '../../shared/interfaces/cv.interfaces';
 
 interface propsInterface {
     content: ExperienceType | undefined
@@ -9,8 +10,8 @@ interface propsInterface {
 
 const Experience = (props: propsInterface): JSX.Element => {
 
-  const {theme  } = useContext(ThemeContext);
-  const isLight = theme === 'light';
+  const theme = useAppSelector(selectTheme);
+  const isLight = theme.theme === themes.LIGHT;
 
   return (
     <div className={isLight ? 'experience-card':'experience-card card-dark'}>

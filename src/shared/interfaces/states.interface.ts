@@ -24,3 +24,7 @@ export interface skillsState {
     content: Skill[];
     status: '' | 'fulfilled' | 'loading' |'failed';
 }
+
+export interface themeState {
+    theme: string;
+}

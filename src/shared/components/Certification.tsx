@@ -1,7 +1,8 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
 import { Certification as certType } from '../interfaces/cv.interfaces';
 import CertificationSkeleton from './CertificationSkeleton';
+import { selectTheme } from '../../store/selectors/global.selectors';
+import { useAppSelector } from '../../store/setup/hooks';
+import { themes } from '../../shared/interfaces/cv.interfaces';
 
 interface propsInterface {
     content: certType [] | undefined
@@ -9,8 +10,8 @@ interface propsInterface {
 
 const Certification = (props: propsInterface): JSX.Element => {
 
-  const { theme } = useContext(ThemeContext);
-  const isLight = theme === 'light';
+  const theme = useAppSelector(selectTheme);
+  const isLight = theme.theme === themes.LIGHT;
 
   return (
     <div className={isLight ? 'certification-card' : 'certification-card card-dark'}>

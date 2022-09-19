@@ -1,6 +1,7 @@
 import Skeleton from '@material-ui/lab/Skeleton';
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
+import { selectTheme } from '../../store/selectors/global.selectors';
+import { useAppSelector } from '../../store/setup/hooks';
+import { themes } from '../../shared/interfaces/cv.interfaces';
 import { Education as EducationType } from '../interfaces/cv.interfaces';
 
 interface propsInterface {
@@ -9,8 +10,8 @@ interface propsInterface {
 
 const Education = (props: propsInterface): JSX.Element => {
 
-  const {theme} = useContext(ThemeContext);
-  const isLight = theme === 'light';
+  const theme = useAppSelector(selectTheme);
+  const isLight = theme.theme === themes.LIGHT;
 
   return (
     <div className={isLight ? 'education-card':'education-card card-dark'}>
