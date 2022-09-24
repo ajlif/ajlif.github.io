@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef} from 'react';
+import { useEffect, useRef} from 'react';
 import Experience from '../shared/components/Experience';
 import Education from '../shared/components/Education';
 import Skill from '../shared/components/Skill';
 import Certification from '../shared/components/Certification';
 import ajlif from '../shared/images/ajlif.jpeg';
 import Skeleton from '@material-ui/lab/Skeleton';
-import AlaJlifCv from '../shared/images/AlaJlifCv.pdf';
+
 import { Education as EducationType, Experience as ExperienceType, Skill as skillType } from '../shared/interfaces/cv.interfaces';
 import { useAppSelector } from '../store/setup/hooks';
 import { selectProfileInf, selectExperiences, selectEducations, selectCertifications, selectSkills  } from '../store/selectors/cv.selectors';
@@ -14,13 +14,12 @@ import { themes } from '../shared/interfaces/cv.interfaces';
 
 const MyCv = (): JSX.Element => {
 
-  const [showScrollUp, setshowScrollUp] = useState(false);
   const mounted = useRef(false);
 
   useEffect(()      => {
     mounted.current = true;
     return () => {
-      mounted.current =          false;
+      mounted.current = false;
     };
   }, []);
 
@@ -32,25 +31,6 @@ const MyCv = (): JSX.Element => {
   const theme = useAppSelector(selectTheme);
 
   const isLight = theme.theme === themes.LIGHT;
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  function scrollUp(): void {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  function handleScroll(): void {
-    setshowScrollUp(window.scrollY > 20);
-  }
 
   return (
     <div className={isLight ? '' : 'header-dark'}>
@@ -129,22 +109,6 @@ const MyCv = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="options">
-        <a href="mailto:alajlif@gmail.com">
-          <button>
-            <i className="bi bi-envelope-plus-fill"></i>
-          </button>
-        </a>
-        <a href={AlaJlifCv} download='AlaJlif_CV'>
-          <button>
-            <i className="bi bi-download"></i>
-          </button>
-        </a>
-        <button onClick={scrollUp} className={showScrollUp ? '' : 'hidden'}>
-          <i className="bi bi-arrow-up-circle-fill"></i>
-        </button>
       </div>
 
       <div className="footer">
