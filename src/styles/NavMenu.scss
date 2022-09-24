@@ -50,15 +50,16 @@ html {
   }
   .footer-menu {
     top: 30%;   
-    right: 0;
+    right: 0; 
+    border-radius: 7px 0 0 7px;
   }
-  .footer-menu  > * {
-    display: flex;
-    flex-direction: column;
+  .footer > * {
+    margin: 10px;
   }
+
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 769px)  and (max-width: 1000px){
   .education-card,
   .certification-card,
   .presentation-card,
@@ -68,10 +69,10 @@ html {
   .footer-menu {
     top: 30%;
     right: 0;
+    border-radius: 7px 0 0 7px;
   }
-  .footer-menu  > * {
-    display: flex;
-    flex-direction: column;
+  .footer > * {
+    margin: 10px;
   }
 }
 
@@ -133,13 +134,13 @@ html {
     transition: 0.5s;
   }
   .footer-menu {
-    bottom: 0;
-    left: 30%;
-  }
-  .footer-menu  > * {
-    margin: 10px;
     display: flex;
-    flex-direction: row;
+    bottom: 0px ;
+    border-radius: 7px 7px 0 0 ;
+    right: 28%;
+  }
+  .footer > * {
+    margin: 10px 10px 60px 10px;
   }
 }
 
@@ -168,6 +169,7 @@ html {
   border-bottom: 5px solid;
   border-image: $main-gradient 1;
 }
+
 .menu > h1 {
   font-size: $default-size;
   border-bottom: 5px solid;
@@ -321,14 +323,9 @@ a > button {
 
 .footer-menu {
   position: fixed;
-  border-radius: 7px 7px 0 0;
+  align-items: center;
   z-index: 4;
-  color: $white-color;
   backdrop-filter: blur(10px);
-}
-
-.footer-menu  > * {
-  margin: 10px;
 }
 
 .footer {
@@ -339,18 +336,15 @@ a > button {
   border-top: 5px solid $principal-color;
 }
 
-.footer > * {
-  margin: 10px;
-}
 .social-footer {
   cursor: pointer;
   font-size: 1.5em;
-  color: $white-color;
+  color: $principal-color;
   transition: 0.4s;
 }
 
 .social-footer:hover {
-  color: $principal-color;
+  color: $secondary-color;
 }
 
 /* Experiences components */
