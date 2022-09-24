@@ -1,5 +1,6 @@
 import * as React from 'react';
 import RightMenu from '../shared/components/RightMenu';
+import FooterMenu from '../shared/components/FooterMenu';
 import NavMenu from './NavMenu';
 
 interface AuxProps  { 
@@ -14,6 +15,7 @@ const Layout = (props:AuxProps): JSX.Element =>  {
         {props.children}
       </div>
       <RightMenu/>
+      <FooterMenu/>
     </React.Fragment>
   );
 };

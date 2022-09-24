@@ -45,9 +45,6 @@ const NavMenu = (): JSX.Element => {
                 <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Projects</strong></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My FE tips</strong></NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Trips</strong></NavLink>
               </NavItem>
               <NavItem>
