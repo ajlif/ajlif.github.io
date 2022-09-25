@@ -1,25 +1,14 @@
 import { NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom' ;
-import { useEffect, useState } from 'react';
+import { useAppSelector } from '../../store/setup/hooks';
+import { selectScroll } from '../../store/selectors/global.selectors';
 
 const FooterMenu = () : JSX.Element => {
 
-  const [showScrollUp, setshowScrollUp] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  function handleScroll(): void {
-    setshowScrollUp(window.scrollY > 20);
-  }
-
+  const scrollInfo = useAppSelector(selectScroll);
 
   return (
-    <div className={showScrollUp ?'footer-menu' : 'footer-menu hidden'}>
+    <div className={scrollInfo.isScrollingDown ?'footer-menu' : 'footer-menu hidden'}>
       <NavLink exact tag={RRNavLink} to="/" activeClassName="menu-selected">
         <i className="bi bi-house-fill social-footer"></i>
       </NavLink>

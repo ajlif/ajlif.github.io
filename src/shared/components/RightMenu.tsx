@@ -1,28 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import AlaJlifCv from '../../shared/images/AlaJlifCv.pdf';
+import { selectScroll } from '../../store/selectors/global.selectors';
+import { useAppSelector } from '../../store/setup/hooks';
+import { scrollUp } from '../../store/slices/scrollSlice';
 
 const RightMenu = (): JSX.Element => {
     
-  const [showScrollUp, setshowScrollUp] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  function scrollUp(): void {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }
-
-  function handleScroll(): void {
-    setshowScrollUp(window.scrollY > 20);
-  }
+  const scrollInfo = useAppSelector(selectScroll);
+  const dispatch = useDispatch();
 
   return (
     <div className='options'>
@@ -36,7 +21,7 @@ const RightMenu = (): JSX.Element => {
           <i className='bi bi-download'></i>
         </button>
       </a>
-      <button onClick={scrollUp} className={showScrollUp ? '' : 'hidden'}>
+      <button onClick={() => dispatch(scrollUp())} className={scrollInfo.isScrollingDown ? '' : 'hidden'}>
         <i className='bi bi-arrow-up-circle-fill'></i>
       </button>
     </div>
