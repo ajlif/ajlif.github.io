@@ -45,9 +45,6 @@ const NavMenu = (): JSX.Element => {
                 <NavLink exact tag={RRNavLink} to="/projects" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Projects</strong></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink exact tag={RRNavLink} to="/frontendtips" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My FE tips</strong></NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink exact tag={RRNavLink} to="/trips" activeClassName="menu-selected"><strong className={isLight? 'menu':'title-dark'}>My Trips</strong></NavLink>
               </NavItem>
               <NavItem>
@@ -55,22 +52,6 @@ const NavMenu = (): JSX.Element => {
               </NavItem>
             </ul>
           </Collapse>
-
-          {/*
-                        <div className="d-flex flex-row-reverse">
-                            {isLoading ? (
-                                <>
-                                    <Skeleton className="align-self-center" variant="text" width={140} height={35} />
-                                    <Skeleton className="m-1" variant="circle" width={40} height={40} />
-                                </>
-                            ) : (
-                                <>
-                                    <strong className="align-self-center user">{name + " " + surName}</strong>
-                                    <Avatar className="m-2">{name.substring(0, 1) + surName.substring(0, 1)}</Avatar>
-                                </>
-                            )}
-                        </div>
-                        */}
         </Container>
       </Navbar>
     </header>

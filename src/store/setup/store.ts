@@ -5,6 +5,7 @@ import  educations from '../slices/educationsSlice';
 import  certifications from '../slices/certificationsSlice';
 import  skills from '../slices/skillsSlice';
 import theme from '../slices/themeSlice';
+import scroll from '../slices/scrollSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
     educations,
     certifications,
     skills,
-    theme
+    theme,
+    scroll
   },
 });
 

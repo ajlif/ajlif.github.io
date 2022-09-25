@@ -28,3 +28,9 @@ export interface skillsState {
 export interface themeState {
     theme: string;
 }
+
+export interface scrollState {
+    x?: number;
+    y: number;
+    isScrollingDown : boolean;
+}
