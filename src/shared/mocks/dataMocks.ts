@@ -9,9 +9,9 @@ const experienceSiemens: Experience = {
   to: 'Present',
   roleDescription: [{
     name: 'Siemens Smart Building',
-    description: `Fire safety involves many disciplines from detection, alarming, evacuation and extinguishing to danger and building management.
-        Technology stacks: Angular, Typescript, RxJS, Jasmine & karma for unit testing.
-        tools: Visual studio Code , git , Gitlab pipeline , SonarQube.
+    description: `Implementation of products and systems related to Fire safety and smart building management.
+        Technology stacks: Angular, golang, AWS .
+        tools: Visual studio Code ,git , Gitlab, SonarQube.
         `
   }]
 };
@@ -36,8 +36,7 @@ const experienceOtConsulting: Experience = {
             and leader among cross-platform mobile application development).
             - developing new features
             - bugs fixing 
-            - code refactoring using SonarQube scanner
-            - reduce code complexity 
+            - code refactoring
             tools: Visual studio Code , git , Atlassian products Jira and confluence , SonarQube , Microsoft Azure , slack, IBM API connect`
     },
     {
