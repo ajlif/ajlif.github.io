@@ -136,8 +136,11 @@ html {
   .footer-menu {
     display: flex;
     bottom: 0px ;
+    left :0;
+    right: 0;
+    justify-content: center;
+    border-top: 2px solid $white-color;
     border-radius: 7px 7px 0 0 ;
-    right: 28%;
   }
   .footer > * {
     margin: 10px 10px 60px 10px;
@@ -324,7 +327,7 @@ a > button {
 .footer-menu {
   position: fixed;
   align-items: center;
-  z-index: 4;
+  z-index: 2;
   backdrop-filter: blur(10px);
 }
 
