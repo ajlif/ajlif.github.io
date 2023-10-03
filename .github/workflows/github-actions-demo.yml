@@ -22,6 +22,8 @@ jobs:
         run: |
           npm run lint
       - name: Build ▶️
+        with:
+          node-version: '16'
         run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
