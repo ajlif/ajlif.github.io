@@ -24,7 +24,7 @@ jobs:
       - name: Build ▶️
         with:
           node-version: '16'
-        run: |
+      - run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
       - name: deploy 🚀
