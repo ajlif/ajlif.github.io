@@ -4,8 +4,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    with:
-      node-version: '16'
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -24,10 +22,14 @@ jobs:
         run: |
           npm run lint
       - name: Build ▶️
+        with:
+          node-version: '16'
         run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
       - name: deploy 🚀
+        with:
+          node-version: '16'
         if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
           git config --global user.name $user_name
