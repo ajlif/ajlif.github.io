@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Collapse, Container, Navbar, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom' ;
-import ajLogo from '../shared/images/ajLogo.png';
 import '../styles/NavMenu.scss';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -35,7 +34,6 @@ const NavMenu = (): JSX.Element => {
               checked={!isLight}
             />
           </FormGroup>
-          <img className='img-logo' src={ajLogo} alt="Ala Jlif Logo" loading='lazy' />
           <Collapse className="d-sm-inline-flex" isOpen={isOpen} navbar>
             <ul className="navbar-nav flex-grow">
               <NavItem>
