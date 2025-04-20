@@ -29,6 +29,8 @@ jobs:
         run: |
           npm run build
       - run: echo "This job's status is ${{ job.status }} 🍏"
+      
+  deploy:    
       - name: deploy 🚀
         if: github.ref == 'refs/heads/master' && job.status == 'success'
         run: |
