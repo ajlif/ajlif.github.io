@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.f8f624b9.chunk.css",
-    "main.js": "./static/js/main.bc093cd9.chunk.js",
-    "main.js.map": "./static/js/main.bc093cd9.chunk.js.map",
+    "main.js": "./static/js/main.990cb92a.chunk.js",
+    "main.js.map": "./static/js/main.990cb92a.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.799d359d.js",
     "runtime-main.js.map": "./static/js/runtime-main.799d359d.js.map",
     "static/css/2.913b6ad9.chunk.css": "./static/css/2.913b6ad9.chunk.css",
@@ -17,11 +17,10 @@
     "static/media/AlaJlifCv.a43810c9.png": "./static/media/AlaJlifCv.a43810c9.png",
     "static/media/ajLogo.92a66ede.png": "./static/media/ajLogo.92a66ede.png",
     "static/media/ajlif.d6433197.jpeg": "./static/media/ajlif.d6433197.jpeg",
-    "static/media/alten.c3afa6a5.png": "./static/media/alten.c3afa6a5.png",
-    "static/media/bgiTunis.34624f6c.jpg": "./static/media/bgiTunis.34624f6c.jpg",
     "static/media/bootstrap-icons.css": "./static/media/bootstrap-icons.ea6f3dfe.woff",
-    "static/media/fsb.fe631413.png": "./static/media/fsb.fe631413.png",
+    "static/media/fsb.f708b46a.jpg": "./static/media/fsb.f708b46a.jpg",
     "static/media/notfound.b7f6880a.gif": "./static/media/notfound.b7f6880a.gif",
+    "static/media/siemens.f90ce98f.jpg": "./static/media/siemens.f90ce98f.jpg",
     "static/media/underconstruction.8d443dcd.png": "./static/media/underconstruction.8d443dcd.png",
     "static/media/uniprg.f3a17317.jpg": "./static/media/uniprg.f3a17317.jpg"
   },
@@ -30,6 +29,6 @@
     "static/css/2.913b6ad9.chunk.css",
     "static/js/2.314aae24.chunk.js",
     "static/css/main.f8f624b9.chunk.css",
-    "static/js/main.bc093cd9.chunk.js"
+    "static/js/main.990cb92a.chunk.js"
   ]
 }
