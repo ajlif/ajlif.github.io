@@ -3,7 +3,7 @@ import { Experience, Certification, Education, Skill } from '../../shared/interf
 /* Experiences mocks*/
 const experienceSiemens: Experience = {
   role: 'Software Engineer @ Siemens',
-  company: 'Alten',
+  company: 'Siemens',
   cityAndCountry: 'Milan, Italy',
   from: 'Oct 2021',
   to: 'Present',
@@ -22,13 +22,6 @@ const experienceOtConsulting: Experience = {
   from: 'Jan 2020',
   to: 'Oct 2021',
   roleDescription: [
-    {
-      name: 'IDENTY',
-      description: `Implementation of a session management console used for video recognition of new customers.
-            Technology stacks:
-            Frontend: react + redux, bootstrap, material-UI, jest, react testing library.
-            Backend: Node.js .`
-    },
     {
       name: 'DIGMOB',
       description: `Implementation and test of the new mobile banking app (CREDEM bank). I had the chance to be a part of a large international professional team which helped me to improve my skills.
@@ -49,20 +42,7 @@ const experienceOtConsulting: Experience = {
             tools: Visual Studio Code, git , docker`
     }]
 };
-const experienceBGI: Experience = {
-  role: 'Undergraduate internship',
-  company: 'BGI',
-  cityAndCountry: 'Tunis, Tunisia',
-  from: 'Jan 2015',
-  to: 'Jun 2015',
-  roleDescription: [{
-    name: 'web application',
-    description: `Design and development of an invoice collection management application in an hybrid mobile/web environment.
-        Technology stacks:
-        Html5 , CSS3 , J2EE , Spring , JavaServer Faces , Javascript , Hibernate , git.`
-  }]
-};
-export const experiences: Experience[] = [experienceSiemens, experienceOtConsulting, experienceBGI];
+export const experiences: Experience[] = [experienceSiemens, experienceOtConsulting];
 
 /* Education mocks*/
 const masterDegree : Education = {
@@ -99,7 +79,8 @@ const tcf: Certification ={
 export const certifications : Certification[] = [ielts, celi, tcf];
 
 /* Skills mocks*/
-export const skills: Skill[] = [{ idCategory: 1, name: 'Javascript' }, { idCategory: 1, name: 'Typescript' }, { idCategory: 1, name: 'Java' }, { idCategory: 1, name: 'Python' },
-  { idCategory: 2, name: 'Angular' }, { idCategory: 2, name: 'React' }, { idCategory: 2, name: 'Express js' }, { idCategory: 2, name: 'Django' }, { idCategory: 2, name: 'Spring' },
-  { idCategory: 3, name: 'Visual studio code' }, { idCategory: 3, name: 'Eclipse' }, { idCategory: 3, name: 'Postman' }, { idCategory: 3, name: 'Docker' }, { idCategory: 3, name: 'Git' },
-  { idCategory: 4, name: 'Oracle' }, { idCategory: 4, name: 'MySql' }, { idCategory: 4, name: 'MongoDb' }]; 
+export const skills: Skill[] = [{ idCategory: 1, name: 'Typescript/Javascript' }, { idCategory: 1, name: 'Golang' },
+  { idCategory: 2, name: 'Angular' }, { idCategory: 2, name: 'React' }, { idCategory: 2, name: 'AWS/serverless' },
+  { idCategory: 3, name: 'Visual studio code' }, { idCategory: 3, name: 'Eclipse' }, { idCategory: 3, name: 'Postman' }, { idCategory: 3, name: 'Docker' },
+  { idCategory: 3, name: 'Git' }, { idCategory: 4, name: 'Oracle' }, { idCategory: 4, name: 'PostgreSQL' }, { idCategory: 4, name: 'MongoDb' },
+  { idCategory: 4,name: 'Learning never stops — and neither does the hunger 🤤'}]; 

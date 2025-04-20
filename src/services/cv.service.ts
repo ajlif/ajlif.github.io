@@ -6,9 +6,9 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
 
 axios.interceptors.response.use((response) => {
   if (response) {
-    switch (response.request ? response.request.responseURL : '') {
+    switch (response.request?.responseURL ?? '') {
       case (`${baseURL}/posts`):
-        return 'Hi, My name is Ala, i\'m a Software Engineer looking for new challenges and different realities in the IT industry. Currently i live in Paris, France 🇫🇷  and i\'m open to work.';
+        return 'Hi, My name is Ala, i\'m a Software Engineer looking for new challenges and different realities in the IT industry. Currently i live in Milan, Italy 🇮🇹 and i\'m open to work.';
       case (`${baseURL}/comments`):
         return experiences;
       case (`${baseURL}/users`):

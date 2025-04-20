@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {getEducation as getEducationsService} from '../../services/cv.service';
 import { EducationState } from '../../shared/interfaces/states.interface';
 import unimore from '../../shared/images/unimore.jpg';
-import fsb from '../../shared/images/fsb.png';
+import fsb from '../../shared/images/fsb.jpg';
 import { Education as EducationType} from '../../shared/interfaces/cv.interfaces';
 
 const initialState: EducationState = {
