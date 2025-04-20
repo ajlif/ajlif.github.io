@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import AlaJlifCv from '../../shared/images/AlaJlifCv.png';
+import AlaJlifCv from '../../shared/images/AlaJlif_CV.png';
 import { selectScroll } from '../../store/selectors/global.selectors';
 import { useAppSelector } from '../../store/setup/hooks';
 import { scrollUp } from '../../store/slices/scrollSlice';
