@@ -2,7 +2,7 @@ import { Experience, Certification, Education, Skill } from '../../shared/interf
 
 /* Experiences mocks*/
 const experienceSiemens: Experience = {
-  role: 'Software Engineer @ Siemens',
+  role: 'Software Engineer',
   company: 'Siemens',
   cityAndCountry: 'Milan, Italy',
   from: 'Oct 2021',
@@ -15,11 +15,12 @@ const experienceSiemens: Experience = {
         `
   }]
 };
-const experienceOtConsulting: Experience = {
+
+const experienceCredem: Experience = {
   role: 'junior Software Engineer',
-  company: 'OT Consulting @ CREDEM bank',
+  company: 'CREDEM bank',
   cityAndCountry: 'Milan, Italy',
-  from: 'Jan 2020',
+  from: 'Jul 2020',
   to: 'Oct 2021',
   roleDescription: [
     {
@@ -31,7 +32,17 @@ const experienceOtConsulting: Experience = {
             - bugs fixing 
             - code refactoring
             tools: Visual studio Code , git , Atlassian products Jira and confluence , SonarQube , Microsoft Azure , slack, IBM API connect`
-    },
+    }
+  ]
+};
+
+const experienceOtConsulting: Experience = {
+  role: 'junior Software Engineer',
+  company: 'OT Consulting',
+  cityAndCountry: 'Milan, Italy',
+  from: 'Jan 2020',
+  to: 'Jun 2020',
+  roleDescription: [
     {
       name: 'Undergraduate internship',
       description: `Realization of an automation system with NLP and Robotic Process Automation solutions.
@@ -40,9 +51,10 @@ const experienceOtConsulting: Experience = {
             Backend: Django rest framework, nginx, Celery, RabbitMQ, jwt
             Machine learning: Google Cloud AutoML
             tools: Visual Studio Code, git , docker`
-    }]
+    }
+  ]
 };
-export const experiences: Experience[] = [experienceSiemens, experienceOtConsulting];
+export const experiences: Experience[] = [experienceSiemens,experienceCredem, experienceOtConsulting];
 
 /* Education mocks*/
 const masterDegree : Education = {

@@ -3,6 +3,7 @@ import {getExperiences as getExperiencesService} from '../../services/cv.service
 import { ExperiencesState } from '../../shared/interfaces/states.interface';
 import siemens from '../../shared/images/siemens.jpg';
 import otConsulting from '../../shared/images/otConsulting.jpeg';
+import credem from '../../shared/images/credem.png';
 import { Experience } from '../../shared/interfaces/cv.interfaces';
 
 const initialState: ExperiencesState = {
@@ -36,6 +37,8 @@ export const getExperiencesSlice = createSlice({
               return (experience.companyLogo = siemens);
             case experience?.company?.toLowerCase().includes('ot'):
               return (experience.companyLogo = otConsulting);
+            case experience?.company?.toLowerCase().includes('credem'):
+              return (experience.companyLogo = credem);
             default:
               return '';
           }
