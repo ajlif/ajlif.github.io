@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.f8f624b9.chunk.css",
-    "main.js": "./static/js/main.2c1c33b3.chunk.js",
-    "main.js.map": "./static/js/main.2c1c33b3.chunk.js.map",
+    "main.js": "./static/js/main.017dc17f.chunk.js",
+    "main.js.map": "./static/js/main.017dc17f.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.799d359d.js",
     "runtime-main.js.map": "./static/js/runtime-main.799d359d.js.map",
     "static/css/2.913b6ad9.chunk.css": "./static/css/2.913b6ad9.chunk.css",
@@ -17,6 +17,7 @@
     "static/media/AlaJlif_CV.ddb31efe.png": "./static/media/AlaJlif_CV.ddb31efe.png",
     "static/media/ajlif.d6433197.jpeg": "./static/media/ajlif.d6433197.jpeg",
     "static/media/bootstrap-icons.css": "./static/media/bootstrap-icons.ea6f3dfe.woff",
+    "static/media/credem.61f4aa9e.png": "./static/media/credem.61f4aa9e.png",
     "static/media/fsb.f708b46a.jpg": "./static/media/fsb.f708b46a.jpg",
     "static/media/notfound.b7f6880a.gif": "./static/media/notfound.b7f6880a.gif",
     "static/media/siemens.f90ce98f.jpg": "./static/media/siemens.f90ce98f.jpg",
@@ -28,6 +29,6 @@
     "static/css/2.913b6ad9.chunk.css",
     "static/js/2.314aae24.chunk.js",
     "static/css/main.f8f624b9.chunk.css",
-    "static/js/main.2c1c33b3.chunk.js"
+    "static/js/main.017dc17f.chunk.js"
   ]
 }
