@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[ajlif.github.io](https://ajlif.github.io/)
+[www.alajlif.com/](https://www.alajlif.com/)
 
 ## Available Scripts
 
