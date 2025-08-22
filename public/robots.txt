@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ajlif.github.io/sitemap.xml
+Sitemap: https://www.alajlif.com/sitemap.xml
